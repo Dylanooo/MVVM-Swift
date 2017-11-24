@@ -1,0 +1,27 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+use_frameworks!
+
+target 'SwiftMVVM' do
+    # 网络库
+    pod 'Alamofire', '~> 4.4.0'
+    # 代码自动布局工具
+	pod 'SnapKit', '~> 4.0.0'
+    # 数据库工具
+	pod 'RealmSwift', '~> 3.0.2'
+    # JSON解析工具
+    pod 'SwiftyJSON', '~> 3.1.4'
+	# 网络图片加载、缓存
+	pod 'Kingfisher'
+	# 日志系统
+	pod 'SwiftyBeaver'
+	# 加载控件
+	pod 'MBProgressHUD', '~> 1.0.0'
+	# 检查网络连接
+	pod 'ReachabilitySwift'
+	# 日期工具
+	pod 'SwiftDate', '~> 4.4.2'
+	# 对Alamofire封装
+	#pod 'Moya', '~> 10.0.0'
+end
+
