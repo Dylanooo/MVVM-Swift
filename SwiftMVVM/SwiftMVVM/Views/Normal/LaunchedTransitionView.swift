@@ -35,11 +35,11 @@ class LaunchedTransitionView: UIView {
 		}
 		
 		let logoImgView = UIImageView()
-		logoImgView.image = UIImage(named: "img_login_autohome")
+		logoImgView.image = UIImage(named: "logo_swift")
 		bgImgView.addSubview(logoImgView)
 		logoImgView.snp.makeConstraints { make in
-			make.width.equalTo(135)
-			make.height.equalTo(57)
+			make.width.equalTo(100)
+			make.height.equalTo(29)
 			make.top.equalTo(119)
 			make.centerX.equalToSuperview()
 		}

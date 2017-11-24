@@ -11,7 +11,7 @@ import RealmSwift
 
 //private let singleton =
 
-private let dbVersion: UInt64 = 1
+private let dbVersion: UInt64 = 2
 
 class DataBaseManager {
 	
@@ -22,29 +22,36 @@ class DataBaseManager {
 	
 	/// 默认数据库变量
 	private lazy var realm = { () -> Realm in
+	
+		DebugPrint(DataBaseManager.config.fileURL?.absoluteString ?? "")
+		Realm.Configuration.defaultConfiguration = DataBaseManager.config
+		
+		let db = try! Realm()
+		
+		return db
+	}()
+	
+	private static let config = Realm.Configuration(fileURL: fileURL,
+													schemaVersion: dbVersion,
+													migrationBlock: { (migration, oldSchemaVersion) in
+		if oldSchemaVersion < dbVersion {
+			
+		}
+		})
+	
+	private static let fileURL: URL = {
 		
 		let docPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-		                                                          .userDomainMask,
-		                                                          true).first!
+																  .userDomainMask,
+																  true).first!
 		
 		var path = docPath + "/DataBase/"
 		
 		FilesManager.default.creatFileDirectoryIfNotExit(path)
 		
 		path += "AutohomeMall.realm"
-
-		var configuration = Realm.Configuration.defaultConfiguration
 		
-		configuration.fileURL = URL(string: path)
-		
-		
-		configuration.schemaVersion = dbVersion
-		DebugPrint(configuration.fileURL?.absoluteString ?? "")
-		Realm.Configuration.defaultConfiguration = configuration
-		
-		let db = try! Realm()
-		
-		return db
+		return URL(string: path)!
 	}()
 
 	

@@ -11,14 +11,9 @@ import RealmSwift
 import Realm.Private
 
 class DBModel: Object {
-		
+	
 	@objc dynamic var createtime = Date().timeIntervalSince1970
 	
-	override class func primaryKey() -> String {
-		
-		return "id"
-		
-	}
 	
 	required init(realm: RLMRealm, schema: RLMObjectSchema) {
 		super.init(realm: realm, schema: schema)

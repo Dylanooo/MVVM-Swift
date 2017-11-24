@@ -24,11 +24,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_Cool_Car_5" translatesAutoresizingMaskIntoConstraints="NO" id="XOe-IG-71L">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_autohome" translatesAutoresizingMaskIntoConstraints="NO" id="CcK-pg-dwy">
-                                <rect key="frame" x="120" y="119" width="135" height="57"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_swift" translatesAutoresizingMaskIntoConstraints="NO" id="CcK-pg-dwy">
+                                <rect key="frame" x="137.66666666666666" y="119" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="Xhm-yW-HWd"/>
-                                    <constraint firstAttribute="height" constant="57" id="pHa-Uj-LZK"/>
+                                    <constraint firstAttribute="height" constant="29" id="Uyv-mz-B7G"/>
+                                    <constraint firstAttribute="width" constant="100" id="qQ3-vz-bgB"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -50,6 +50,6 @@
     </scenes>
     <resources>
         <image name="IMG_Cool_Car_5" width="540" height="960"/>
-        <image name="img_login_autohome" width="135" height="57"/>
+        <image name="logo_swift" width="100" height="29"/>
     </resources>
 </document>

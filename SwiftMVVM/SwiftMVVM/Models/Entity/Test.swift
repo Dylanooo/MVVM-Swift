@@ -14,5 +14,7 @@ class Test: DBModel {
 	@objc dynamic var author = ""
 	@objc dynamic var articleid = 0
 	@objc dynamic var title = ""
+	@objc dynamic var id = ""
+	override class func primaryKey() -> String? { return "id" }
 }
 

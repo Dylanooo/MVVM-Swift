@@ -76,7 +76,6 @@
 		C8AC241D1FC7F4AC00CF03BF /* LaunchedTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23D21FC7F4AB00CF03BF /* LaunchedTransitionView.swift */; };
 		C8AC241E1FC7F4AC00CF03BF /* AHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23D41FC7F4AB00CF03BF /* AHTabBar.swift */; };
 		C8AC241F1FC7F4AC00CF03BF /* PlaceHolderNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23D51FC7F4AB00CF03BF /* PlaceHolderNavBar.swift */; };
-		C8AC24201FC7F4AC00CF03BF /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8AC23D71FC7F4AC00CF03BF /* LaunchScreen.strings */; };
 		C8AC24211FC7F4AC00CF03BF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23DA1FC7F4AC00CF03BF /* UserViewModel.swift */; };
 		C8AC24221FC7F4AC00CF03BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23DB1FC7F4AC00CF03BF /* HomeViewModel.swift */; };
 		C8AC24231FC7F4AC00CF03BF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23DC1FC7F4AC00CF03BF /* BaseViewModel.swift */; };
@@ -171,7 +170,6 @@
 		C8AC23C01FC7F4AB00CF03BF /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C8AC23C41FC7F4AB00CF03BF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		C8AC23C51FC7F4AB00CF03BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8AC23C71FC7F4AB00CF03BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8AC23C81FC7F4AB00CF03BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8AC23CE1FC7F4AB00CF03BF /* UIBarButtonItemFixSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFixSpace.swift; sourceTree = "<group>"; };
 		C8AC23CF1FC7F4AB00CF03BF /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
@@ -179,11 +177,12 @@
 		C8AC23D21FC7F4AB00CF03BF /* LaunchedTransitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchedTransitionView.swift; sourceTree = "<group>"; };
 		C8AC23D41FC7F4AB00CF03BF /* AHTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBar.swift; sourceTree = "<group>"; };
 		C8AC23D51FC7F4AB00CF03BF /* PlaceHolderNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderNavBar.swift; sourceTree = "<group>"; };
-		C8AC23D81FC7F4AC00CF03BF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = LaunchScreen.strings; sourceTree = "<group>"; };
 		C8AC23DA1FC7F4AC00CF03BF /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C8AC23DB1FC7F4AC00CF03BF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C8AC23DC1FC7F4AC00CF03BF /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C8AC23DD1FC7F4AC00CF03BF /* ProvinceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceViewModel.swift; sourceTree = "<group>"; };
+		C8B7B6581FC809290010BDE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8B7B6591FC8092D0010BDE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E9AE48A7555D28C39493ED88 /* Pods-SwiftMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMVVM/Pods-SwiftMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,12 +256,11 @@
 			children = (
 				C8AC23741FC7F4AB00CF03BF /* AppDelegate.swift */,
 				C8AC23B61FC7F4AB00CF03BF /* Controllers */,
-				C8AC23751FC7F4AB00CF03BF /* Models */,
-				C8AC23C11FC7F4AB00CF03BF /* Resources */,
-				C8AC23831FC7F4AB00CF03BF /* Utils */,
 				C8AC23D91FC7F4AC00CF03BF /* ViewModels */,
+				C8AC23751FC7F4AB00CF03BF /* Models */,
 				C8AC23CB1FC7F4AB00CF03BF /* Views */,
-				C8AC23D61FC7F4AC00CF03BF /* zh-Hans.lproj */,
+				C8AC23831FC7F4AB00CF03BF /* Utils */,
+				C8AC23C11FC7F4AB00CF03BF /* Resources */,
 				C8AC23511FC7F42500CF03BF /* Info.plist */,
 			);
 			path = SwiftMVVM;
@@ -471,11 +469,9 @@
 		C8AC23B61FC7F4AB00CF03BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C8AC23B71FC7F4AB00CF03BF /* HomeController.swift */,
-				C8AC23B81FC7F4AB00CF03BF /* LoginController.swift */,
-				C8AC23B91FC7F4AB00CF03BF /* ResetPassWordController.swift */,
-				C8AC23BA1FC7F4AB00CF03BF /* UserCenterController.swift */,
-				C8AC23BB1FC7F4AB00CF03BF /* PlaceHolderViewController.swift */,
+				C8B7B6531FC7FAAD0010BDE8 /* PlaceHolder */,
+				C8B7B6521FC7FA980010BDE8 /* User */,
+				C8B7B6511FC7FA860010BDE8 /* Home */,
 				C8AC23BC1FC7F4AB00CF03BF /* Base */,
 			);
 			path = Controllers;
@@ -571,14 +567,6 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		C8AC23D61FC7F4AC00CF03BF /* zh-Hans.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				C8AC23D71FC7F4AC00CF03BF /* LaunchScreen.strings */,
-			);
-			path = "zh-Hans.lproj";
-			sourceTree = "<group>";
-		};
 		C8AC23D91FC7F4AC00CF03BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +576,32 @@
 				C8AC23DD1FC7F4AC00CF03BF /* ProvinceViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C8B7B6511FC7FA860010BDE8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C8AC23B71FC7F4AB00CF03BF /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C8B7B6521FC7FA980010BDE8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C8AC23B81FC7F4AB00CF03BF /* LoginController.swift */,
+				C8AC23B91FC7F4AB00CF03BF /* ResetPassWordController.swift */,
+				C8AC23BA1FC7F4AB00CF03BF /* UserCenterController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		C8B7B6531FC7FAAD0010BDE8 /* PlaceHolder */ = {
+			isa = PBXGroup;
+			children = (
+				C8AC23BB1FC7F4AB00CF03BF /* PlaceHolderViewController.swift */,
+			);
+			path = PlaceHolder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,7 +717,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8AC24181FC7F4AC00CF03BF /* LaunchScreen.storyboard in Resources */,
-				C8AC24201FC7F4AC00CF03BF /* LaunchScreen.strings in Resources */,
 				C8AC240B1FC7F4AC00CF03BF /* test.html in Resources */,
 				C8AC240D1FC7F4AC00CF03BF /* jquery.lazyload.js in Resources */,
 				C8AC240A1FC7F4AC00CF03BF /* app.css in Resources */,
@@ -916,17 +929,10 @@
 		C8AC23C61FC7F4AB00CF03BF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8AC23C71FC7F4AB00CF03BF /* Base */,
+				C8B7B6581FC809290010BDE8 /* en */,
+				C8B7B6591FC8092D0010BDE8 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C8AC23D71FC7F4AC00CF03BF /* LaunchScreen.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8AC23D81FC7F4AC00CF03BF /* zh-Hans */,
-			);
-			name = LaunchScreen.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -16,4 +16,8 @@ class Fuck: DBModel {
 	@objc dynamic var time: String = ""
 	
 	@objc dynamic var address: String = ""
+	
+	@objc dynamic var id: String = ""
+	
+	override class func primaryKey() -> String? { return "id" }
 }

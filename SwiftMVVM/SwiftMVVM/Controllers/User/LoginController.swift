@@ -68,7 +68,19 @@ class LoginController: UIViewController, KeyboardHandle {
 		AutoProgressHUD.showAutoHud("登录中....")
 		
 		viewModel.login(pwd: pwdTextField.text, account: accountTextField.text, complete: { user in
-
+			let kWindow: UIWindow = UIApplication.shared.keyWindow!
+			let rootVC = UIStoryboard.vcInMainSB("MainTabBarController")
+			rootVC.modalTransitionStyle = .crossDissolve
+			UIView.transition(with: kWindow,
+							  duration: 1,
+							  options: .transitionCrossDissolve,
+							  animations: {
+								let oldState = UIView.areAnimationsEnabled
+								UIView.setAnimationsEnabled(false)
+								kWindow.rootViewController = rootVC
+								UIView.setAnimationsEnabled(oldState)
+								
+			}, completion: nil)
 		})
 		
 		
