@@ -15,7 +15,9 @@ class UserViewModel: BaseViewModel<UserApi> {
 		provider.request(.login, responseHandler: { response in
 			
 			DebugPrint("value = \(String(describing: response.value))")
+			
 			DebugPrint("values = \(String(describing: response.values))")
+			
 			DebugPrint(response.message)
 			
 			if let province = response.value {

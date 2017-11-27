@@ -37,7 +37,7 @@
 		C8AC23F61FC7F4AC00CF03BF /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23971FC7F4AB00CF03BF /* NetworkType.swift */; };
 		C8AC23F71FC7F4AC00CF03BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23981FC7F4AB00CF03BF /* NetworkManager.swift */; };
 		C8AC23F81FC7F4AC00CF03BF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23991FC7F4AB00CF03BF /* Request.swift */; };
-		C8AC23F91FC7F4AC00CF03BF /* HTTPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239A1FC7F4AB00CF03BF /* HTTPApi.swift */; };
+		C8AC23F91FC7F4AC00CF03BF /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239A1FC7F4AB00CF03BF /* HTTPProvider.swift */; };
 		C8AC23FA1FC7F4AC00CF03BF /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239B1FC7F4AB00CF03BF /* NetworkConfiguration.swift */; };
 		C8AC23FB1FC7F4AC00CF03BF /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239C1FC7F4AB00CF03BF /* CacheManager.swift */; };
 		C8AC23FC1FC7F4AC00CF03BF /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239D1FC7F4AB00CF03BF /* AppManager.swift */; };
@@ -102,6 +102,7 @@
 /* Begin PBXFileReference section */
 		8CD2C967835BEEC8509B9779 /* Pods_SwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1AF9EB4B3D1FB62559BC518 /* Pods-SwiftMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMVVM/Pods-SwiftMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		C88159361FC81EA4007D36B7 /* SwiftMVVM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftMVVM.entitlements; sourceTree = "<group>"; };
 		C8AC23421FC7F42500CF03BF /* SwiftMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AC23511FC7F42500CF03BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8AC23561FC7F42500CF03BF /* SwiftMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +139,7 @@
 		C8AC23971FC7F4AB00CF03BF /* NetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
 		C8AC23981FC7F4AB00CF03BF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C8AC23991FC7F4AB00CF03BF /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		C8AC239A1FC7F4AB00CF03BF /* HTTPApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPApi.swift; sourceTree = "<group>"; };
+		C8AC239A1FC7F4AB00CF03BF /* HTTPProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProvider.swift; sourceTree = "<group>"; };
 		C8AC239B1FC7F4AB00CF03BF /* NetworkConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		C8AC239C1FC7F4AB00CF03BF /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		C8AC239D1FC7F4AB00CF03BF /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
@@ -254,6 +255,7 @@
 		C8AC23441FC7F42500CF03BF /* SwiftMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				C88159361FC81EA4007D36B7 /* SwiftMVVM.entitlements */,
 				C8AC23741FC7F4AB00CF03BF /* AppDelegate.swift */,
 				C8AC23B61FC7F4AB00CF03BF /* Controllers */,
 				C8AC23D91FC7F4AC00CF03BF /* ViewModels */,
@@ -393,7 +395,7 @@
 				C8AC23971FC7F4AB00CF03BF /* NetworkType.swift */,
 				C8AC23981FC7F4AB00CF03BF /* NetworkManager.swift */,
 				C8AC23991FC7F4AB00CF03BF /* Request.swift */,
-				C8AC239A1FC7F4AB00CF03BF /* HTTPApi.swift */,
+				C8AC239A1FC7F4AB00CF03BF /* HTTPProvider.swift */,
 				C8AC239B1FC7F4AB00CF03BF /* NetworkConfiguration.swift */,
 			);
 			path = NetWorkManager;
@@ -677,6 +679,14 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C8AC23551FC7F42500CF03BF = {
 						CreatedOnToolsVersion = 9.1;
@@ -867,7 +877,7 @@
 				C8AC241F1FC7F4AC00CF03BF /* PlaceHolderNavBar.swift in Sources */,
 				C8AC23E61FC7F4AC00CF03BF /* UserApi.swift in Sources */,
 				C8AC23E91FC7F4AC00CF03BF /* NewsApi.swift in Sources */,
-				C8AC23F91FC7F4AC00CF03BF /* HTTPApi.swift in Sources */,
+				C8AC23F91FC7F4AC00CF03BF /* HTTPProvider.swift in Sources */,
 				C8AC240F1FC7F4AC00CF03BF /* LoginController.swift in Sources */,
 				C8AC23FD1FC7F4AC00CF03BF /* DateTools.swift in Sources */,
 				C8AC24061FC7F4AC00CF03BF /* WebUtils.swift in Sources */,
@@ -1053,6 +1063,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SwiftMVVM/SwiftMVVM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68X5R2774N;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1079,6 +1090,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SwiftMVVM/SwiftMVVM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68X5R2774N;
 				INFOPLIST_FILE = SwiftMVVM/Info.plist;

@@ -8,11 +8,17 @@
 
 import UIKit
 import RealmSwift
+
 class Province: DBModel {
+	
 	@objc dynamic var id: Int = 0
+	
 	@objc dynamic var firstletter: String = ""
+	
 	@objc dynamic var name: String = ""
+	
 	let owner = LinkingObjects(fromType: Country.self, property: "provinces")
+	
 	let citys = List<City>()
 	
 }

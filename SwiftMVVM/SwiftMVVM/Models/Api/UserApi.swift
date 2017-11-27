@@ -18,7 +18,6 @@ extension UserApi: Request {
 	
 	typealias EntityType = Country
 	
-	
 	var baseURL: String {
 		
 		switch self {

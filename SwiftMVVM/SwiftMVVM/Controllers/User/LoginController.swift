@@ -19,35 +19,21 @@ class LoginController: UIViewController, KeyboardHandle {
 	@IBOutlet var pwdLeftView: UIView!
 	
 	var viewModel: UserViewModel!
-	var  provider: HTTPApi<UserApi>!
+	
+	var  provider: HTTPProvider<UserApi>!
+	
 	override func viewDidLoad() {
+		
         super.viewDidLoad()
+		
 		viewModel = UserViewModel()
+		
 		setupUI()
-		
-//		var array = [Int]()
-//
-//		DispatchQueue.concurrentPerform(iterations: 1000) { index in
-//			let last = array.last ?? 0
-//			array.append(last + 1)
-////			sleep(1)
-//			DebugPrint("Unsafe loop count: \(last + 1)")
-//		}
-//
-//		DispatchQueue.global(qos: .default).async {
-//			//处理耗时操作的代码块...
-//			print("do work")
-//
-//			//操作完成，调用主线程来刷新界面
-//			DispatchQueue.main.async {
-//				print("main refresh")
-//			}
-//		}
-		
     }
 
 	/// 设置UI  IMG_Cool_Car_0
 	private func setupUI() {
+		
 		inputBgView.layer.cornerRadius = 5
 		inputBgView.layer.borderColor = UIColor(hexColor: "#16b4ef").cgColor
 		inputBgView.layer.borderWidth = 1/UIScreen.main.scale
@@ -57,6 +43,7 @@ class LoginController: UIViewController, KeyboardHandle {
 		accountTextField.leftView = accountLeftView
 		pwdTextField.leftViewMode = .always
 		pwdTextField.leftView = pwdLeftView
+		
 		let imgName = "IMG_Cool_Car_5"
 		
 		bgImgView.image = UIImage(named: imgName)
@@ -64,24 +51,27 @@ class LoginController: UIViewController, KeyboardHandle {
 	
 	/// 登录
 	@IBAction func loginAction(_ sender: Any) {
+		
 		DebugPrint("登录中")
 		AutoProgressHUD.showAutoHud("登录中....")
-		
-		viewModel.login(pwd: pwdTextField.text, account: accountTextField.text, complete: { user in
-			let kWindow: UIWindow = UIApplication.shared.keyWindow!
-			let rootVC = UIStoryboard.vcInMainSB("MainTabBarController")
-			rootVC.modalTransitionStyle = .crossDissolve
-			UIView.transition(with: kWindow,
-							  duration: 1,
-							  options: .transitionCrossDissolve,
-							  animations: {
-								let oldState = UIView.areAnimationsEnabled
-								UIView.setAnimationsEnabled(false)
-								kWindow.rootViewController = rootVC
-								UIView.setAnimationsEnabled(oldState)
+
+		self.viewModel.login(pwd: self.pwdTextField.text,
+							 account: self.accountTextField.text,
+							 complete:
+			{ country in
+				
+				DebugPrint("中国一共\(country.provinces.count)个省份，他们分别是：")
+				
+				for province in country.provinces {
+					
+					DebugPrint("名称: \(province.name), 包含\(province.citys.count)个城市")
+					
+				}
+				
 								
-			}, completion: nil)
 		})
+
+		
 		
 		
 

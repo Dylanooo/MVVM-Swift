@@ -12,6 +12,7 @@ class HomeViewModel: NSObject {
 	
 	/// 开始定位
 	func setupLoaction() {
+		
 		LocationManager.sharedInstance.getUserLocationInfo(cllocation: { location in
 			
 			print("lat = \(location.coordinate.latitude)  lon = \(location.coordinate.longitude)")
@@ -25,7 +26,7 @@ class HomeViewModel: NSObject {
 	
 	func login(account: String, pwd: String, complete: ((String, String) -> Void)) {
 		
-		let UserProvider = HTTPApi<UserApi>()
+		let UserProvider = HTTPProvider<UserApi>()
 		
 		UserProvider.request(.login) { response in
 			

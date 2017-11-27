@@ -11,13 +11,21 @@ import UIKit
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
+		
         super.viewDidLoad()
+		
 		self.delegate = self
+		
 		let tabBar = AHTabBar(frame: self.tabBar.bounds)
+		
 		tabBar.centerBtnClickedClosure = { [unowned self] in
+			
 			self.showPopVC()
+			
 		}
+		
 		self.setValue(tabBar, forKey: "tabBar")
+		
 		UIApplication.shared.isStatusBarHidden = false
 		
     }
@@ -33,17 +41,27 @@ class MainTabBarController: UITabBarController {
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {
+	
 	func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+		
 		if viewController is PlaceHolderViewController {
+			
 			showPopVC()
+			
 		}
+		
 		return !(viewController is PlaceHolderViewController)
 	}
 	
 	func showPopVC() {
+		
 		let userVC = UIStoryboard.vcInMainSB("UserCenterController")
+		
 		userVC.modalPresentationStyle = .overFullScreen
+		
 		userVC.modalTransitionStyle = .crossDissolve
+		
 		present(userVC, animated: true, completion: nil)
+		
 	}
 }

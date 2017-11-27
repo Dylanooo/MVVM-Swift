@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class HTTPApi<Target: Request> where Target.EntityType: DBModel {
+class HTTPProvider<Target: Request> where Target.EntityType: DBModel {
 	
 	func request(_ targetType: Target, responseHandler: @escaping ResponseBlock<Target.EntityType>)  {
 		

@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseViewModel<Services: Request> where Services.EntityType: DBModel {
-	let provider = HTTPApi<Services>()
-	init() {
-	}
+	
+	let provider = HTTPProvider<Services>()
+	
 }

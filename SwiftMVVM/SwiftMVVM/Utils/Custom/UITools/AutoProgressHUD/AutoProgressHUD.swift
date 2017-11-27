@@ -11,12 +11,16 @@ import MBProgressHUD
 
 class AutoProgressHUD {
 	
-	class func showAutoHud(_ msg: String) {
+	static var hud: MBProgressHUD = {
 		let keyWindow: UIWindow = UIApplication.shared.windows.first!
 		let hud = MBProgressHUD(view: keyWindow)
+		keyWindow.addSubview(hud)
+		return hud
+	}()
+	
+	class func showAutoHud(_ msg: String) {
 		hud.label.text = msg
 		hud.label.textColor = .darkGray
-		keyWindow.addSubview(hud)
 		hud.show(animated: true)
 		hud.hide(animated: true, afterDelay: 2.0)
 	}
