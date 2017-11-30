@@ -1,5 +1,5 @@
 ![Mac OS X](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)
-![MVVM](https://img.shields.io/badge/Design Pattern-MVVM-4BC51D.svg?style=flat)
+![MVVM](https://img.shields.io/badge/Design%20Pattern-MVVM-4BC51D.svg?style=flat)
 ![Swift 4 compatible](https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat)
 ![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
