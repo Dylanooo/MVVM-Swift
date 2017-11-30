@@ -60,7 +60,3 @@ enum NotificationName: String {
 	case fuck
 
 }
-
-enum UserNotificationName {
-	typealias RawValue = String
-}

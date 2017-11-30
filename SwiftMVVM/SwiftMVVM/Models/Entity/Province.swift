@@ -16,9 +16,13 @@ class Province: DBModel {
 	@objc dynamic var firstletter: String = ""
 	
 	@objc dynamic var name: String = ""
-	
+
+
+	/// 设置与Contry的一对多关系
 	let owner = LinkingObjects(fromType: Country.self, property: "provinces")
-	
+
+
+	/// 设置与cities的一对多关系， 保持字段名称与服务端返回一致
 	let citys = List<City>()
 	
 }

@@ -19,9 +19,9 @@ enum NewsApi<T> {
 }
 
 extension NewsApi: Request {
+
 	typealias EntityType = T
-	
-	
+
 	var path: String {
 		
 		switch self {

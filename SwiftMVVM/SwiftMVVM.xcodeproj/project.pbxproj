@@ -495,7 +495,7 @@
 			children = (
 				C8AC23C21FC7F4AB00CF03BF /* Interface */,
 				C8AC23C81FC7F4AB00CF03BF /* Assets.xcassets */,
-				C8AC23C91FC7F4AB00CF03BF /* IMG */,
+				C8AC23C91FC7F4AB00CF03BF /* Images */,
 				C8AC23CA1FC7F4AB00CF03BF /* Documents */,
 			);
 			path = Resources;
@@ -510,11 +510,11 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		C8AC23C91FC7F4AB00CF03BF /* IMG */ = {
+		C8AC23C91FC7F4AB00CF03BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = IMG;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		C8AC23CA1FC7F4AB00CF03BF /* Documents */ = {

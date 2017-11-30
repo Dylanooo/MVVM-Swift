@@ -28,10 +28,6 @@ class UserViewModel: BaseViewModel<UserApi> {
 			
 		})
 	}
-	
-	deinit {
-		DebugPrint("ViewModel deinit~~~~")
-	}
 }
 
 

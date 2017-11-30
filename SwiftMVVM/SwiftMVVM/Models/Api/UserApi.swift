@@ -15,9 +15,13 @@ enum UserApi {
 }
 
 extension UserApi: Request {
-	
+
+
+	/// 请求返回实体类型
 	typealias EntityType = Country
-	
+
+
+	/// host 如果项目中所有host可以保持一致，直接在Request中设置默认Host，在具体的Api中可省略
 	var baseURL: String {
 		
 		switch self {
@@ -32,7 +36,9 @@ extension UserApi: Request {
 			
 		}
 	}
-	
+
+
+	/// 具体业务对应的path
 	var path: String {
 		
 		switch self {
@@ -56,6 +62,7 @@ extension UserApi: Request {
 		}
 	}
 	
+	/// 参数
 	var parameters: [String: Any]? {
 		
 		switch self {

@@ -32,14 +32,14 @@ public extension UIColor {
 		switch hex.count {
 		case 3:
 			self.init(red: CGFloat(((hexNum & 0xF00) >> 8).duplicate4bits) / 255.0,
-			          green: CGFloat(((hexNum & 0x0F0) >> 4).duplicate4bits) / 255.0,
-			          blue: CGFloat((hexNum & 0x00F).duplicate4bits) / 255.0,
-			          alpha: alpha)
+					  green: CGFloat(((hexNum & 0x0F0) >> 4).duplicate4bits) / 255.0,
+					  blue: CGFloat((hexNum & 0x00F).duplicate4bits) / 255.0,
+					  alpha: alpha)
 		case 6:
 			self.init(red: CGFloat((hexNum & 0xFF0000) >> 16) / 255.0,
-			          green: CGFloat((hexNum & 0x00FF00) >> 8) / 255.0,
-			          blue: CGFloat((hexNum & 0x0000FF) >> 0) / 255.0,
-			          alpha: alpha)
+					  green: CGFloat((hexNum & 0x00FF00) >> 8) / 255.0,
+					  blue: CGFloat((hexNum & 0x0000FF) >> 0) / 255.0,
+					  alpha: alpha)
 		default:
 			self.init(red: 0, green: 0, blue: 0, alpha: 0)
 		}
@@ -51,4 +51,8 @@ private extension Int {
 	var duplicate4bits: Int {
 		return self << 4 + self
 	}
+}
+
+extension UIColor {
+	
 }
