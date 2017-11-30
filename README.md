@@ -1,10 +1,13 @@
 ![Mac OS X](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)
 ![MVVM](https://img.shields.io/badge/Design%20Pattern-MVVM-4BC51D.svg?style=flat)
 ![Swift 4 compatible](https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat)
-![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
+![MIT](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 
 # MVVM-Swift
-基于Swift 4.0的MVVM框架，仿照Moya对Alamofire进行更轻量级的封装，网络请求返回实体或者实体数组，结构更清晰
+* 基于Swift 4.0的MVVM框架
+* 仿照Moya对Alamofire进行更轻量级的封装,网络请求返回实体或者实体数组
+* 基于当下流行的Realm数据库，封装了一套方便开发者，对数据库CRUD操作的数据库工具类
+* 另外通过灵活使用Swift的语言特性，封装了其他更方便的工具类，使开发者的工作更轻松
 
 ## 项目结构
 * Controllers
