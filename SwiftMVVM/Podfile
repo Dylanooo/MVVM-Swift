@@ -19,9 +19,5 @@ target 'SwiftMVVM' do
 	pod 'MBProgressHUD', '~> 1.0.0'
 	# 检查网络连接
 	pod 'ReachabilitySwift'
-	# 日期工具
-	pod 'SwiftDate', '~> 4.4.2'
-	# 对Alamofire封装
-	#pod 'Moya', '~> 10.0.0'
 end
 

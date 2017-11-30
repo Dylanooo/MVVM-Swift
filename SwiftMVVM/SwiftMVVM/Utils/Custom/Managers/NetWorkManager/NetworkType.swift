@@ -24,6 +24,12 @@ struct Result<T> {
 	var message: String
 }
 
+
+/// 请求信息
+///
+/// - responseMsg: 响应信息
+/// - success: 成功提示
+/// - failure: 失败提示
 enum Message {
 	
 	case responseMsg(String)
@@ -52,6 +58,8 @@ enum Message {
 	}
 }
 
+
+/// 网络请求错误
 struct NetError {
 	
 	var code: Int
@@ -60,6 +68,11 @@ struct NetError {
 	
 }
 
+
+/// 网络响应
+///
+/// - Success: 成功
+/// - Failure: 失败
 enum Response<T> {
 	
 	case Success(Result<T>)
@@ -134,6 +147,8 @@ enum Response<T> {
 	}
 }
 
+
+// MARK: - 描述
 extension Response: CustomStringConvertible {
 	
 	var description: String {
@@ -152,6 +167,8 @@ extension Response: CustomStringConvertible {
 	}
 }
 
+
+// MARK: - debug描述
 extension Response: CustomDebugStringConvertible {
 	
 	var debugDescription: String {

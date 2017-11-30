@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CacheManager: NSObject {
+class CacheManager {
 	
 }

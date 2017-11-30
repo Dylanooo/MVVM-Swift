@@ -41,6 +41,7 @@ public enum FileType {
 }
 
 
+// MARK: - 设置默认数据
 public extension Request {
 	
 	var baseURL: String {

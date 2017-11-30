@@ -12,6 +12,12 @@ import Alamofire
 
 class HTTPProvider<Target: Request> where Target.EntityType: DBModel {
 	
+	
+	/// 网络请求
+	///
+	/// - Parameters:
+	///   - targetType: Api模型
+	///   - responseHandler: 请求回调
 	func request(_ targetType: Target, responseHandler: @escaping ResponseBlock<Target.EntityType>)  {
 		
 		NetworkManager.sharedInstance.request(targetType, responseHandler: responseHandler)

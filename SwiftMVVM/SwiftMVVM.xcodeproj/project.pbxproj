@@ -43,7 +43,7 @@
 		C8AC23FC1FC7F4AC00CF03BF /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239D1FC7F4AB00CF03BF /* AppManager.swift */; };
 		C8AC23FD1FC7F4AC00CF03BF /* DateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239E1FC7F4AB00CF03BF /* DateTools.swift */; };
 		C8AC23FE1FC7F4AC00CF03BF /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC239F1FC7F4AB00CF03BF /* ThemeManager.swift */; };
-		C8AC23FF1FC7F4AC00CF03BF /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23A11FC7F4AB00CF03BF /* FilesManager.swift */; };
+		C8AC23FF1FC7F4AC00CF03BF /* FileTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23A11FC7F4AB00CF03BF /* FileTool.swift */; };
 		C8AC24001FC7F4AC00CF03BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23A21FC7F4AB00CF03BF /* LocationManager.swift */; };
 		C8AC24011FC7F4AC00CF03BF /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23A41FC7F4AB00CF03BF /* DBModel.swift */; };
 		C8AC24021FC7F4AC00CF03BF /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC23A51FC7F4AB00CF03BF /* DataBaseManager.swift */; };
@@ -145,7 +145,7 @@
 		C8AC239D1FC7F4AB00CF03BF /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		C8AC239E1FC7F4AB00CF03BF /* DateTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTools.swift; sourceTree = "<group>"; };
 		C8AC239F1FC7F4AB00CF03BF /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		C8AC23A11FC7F4AB00CF03BF /* FilesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		C8AC23A11FC7F4AB00CF03BF /* FileTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTool.swift; sourceTree = "<group>"; };
 		C8AC23A21FC7F4AB00CF03BF /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C8AC23A41FC7F4AB00CF03BF /* DBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		C8AC23A51FC7F4AB00CF03BF /* DataBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
@@ -404,7 +404,7 @@
 		C8AC23A01FC7F4AB00CF03BF /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				C8AC23A11FC7F4AB00CF03BF /* FilesManager.swift */,
+				C8AC23A11FC7F4AB00CF03BF /* FileTool.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -803,7 +803,6 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -816,7 +815,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -866,7 +864,7 @@
 				C8AC23F81FC7F4AC00CF03BF /* Request.swift in Sources */,
 				C8AC23F71FC7F4AC00CF03BF /* NetworkManager.swift in Sources */,
 				C8AC24051FC7F4AC00CF03BF /* WebViewController.swift in Sources */,
-				C8AC23FF1FC7F4AC00CF03BF /* FilesManager.swift in Sources */,
+				C8AC23FF1FC7F4AC00CF03BF /* FileTool.swift in Sources */,
 				C8AC23EB1FC7F4AC00CF03BF /* NSObjectExtension.swift in Sources */,
 				C8AC241B1FC7F4AC00CF03BF /* UIBarButtonItemExtension.swift in Sources */,
 				C8AC23F31FC7F4AC00CF03BF /* UIImageExtension.swift in Sources */,

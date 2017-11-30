@@ -58,7 +58,7 @@ extension NSObject {
 	func setValueOfProperty(property: String, value: Any?) -> Bool {
 		
 		let allPropertys = getAllPropertys()
-
+		
 		if(allPropertys.contains(property)) {
 			
 			setValue(value, forKey: property)

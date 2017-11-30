@@ -73,14 +73,4 @@ class HomeController: UIViewController {
 	@IBAction func needMatchAction(_ sender: Any) {
 		DebugPrint("今日待匹配")
 	}
-	
-    override func didReceiveMemoryWarning() {
-		
-        super.didReceiveMemoryWarning()
-		
-    }
-	
-	deinit {
-		
-	}
 }

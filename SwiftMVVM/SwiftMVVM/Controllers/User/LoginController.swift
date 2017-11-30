@@ -26,9 +26,21 @@ class LoginController: UIViewController, KeyboardHandle {
 		
         super.viewDidLoad()
 		
+		FileTool().creatFileIfNotExit(name: "testttttt.txt")
+		
+//		let img = UIImage(named: "IMG_Cool_Car_5")
+		
+		
+//		FileTool(delegate: self).write(data: UIImageJPEGRepresentation(img!, 0.5)!, toFile: "image.png", cover: false)
+		
+//		let data = FileTool().read(fileName: "image.png")
+		
+		
 		viewModel = UserViewModel()
 		
 		setupUI()
+		NotificationCenter.post(name: .fuck, object: nil, userInfo: nil)
+		NotificationCenter.post(name: .UIKeyboardDidHide, object: nil, userInfo: nil)
     }
 
 	/// 设置UI  IMG_Cool_Car_0
@@ -58,27 +70,50 @@ class LoginController: UIViewController, KeyboardHandle {
 		self.viewModel.login(pwd: self.pwdTextField.text,
 							 account: self.accountTextField.text,
 							 complete:
-			{ country in
+			{ [unowned self] country in
 				
 				DebugPrint("中国一共\(country.provinces.count)个省份，他们分别是：")
 				
-				for province in country.provinces {
-					
-					DebugPrint("名称: \(province.name), 包含\(province.citys.count)个城市")
-					
-				}
-				
+//				for province in country.provinces {
+//
+//					DebugPrint("名称: \(province.name), 包含\(province.citys.count)个城市")
+//
+//				}
+				self.loadHomeVC()
 								
 		})
-
+	}
+	
+	func loadHomeVC() {
+		let kWindow: UIWindow = UIApplication.shared.keyWindow!
+		let rootVC = UIStoryboard.vcInMainSB("MainTabBarController")
+		rootVC.modalTransitionStyle = .crossDissolve
+		UIView.transition(with: kWindow,
+						  duration: 1,
+						  options: .transitionCrossDissolve,
+						  animations: {
+							let oldState = UIView.areAnimationsEnabled
+							UIView.setAnimationsEnabled(false)
+							kWindow.rootViewController = rootVC
+							UIView.setAnimationsEnabled(oldState)
+							
+		}, completion: nil)
 		
-		
-		
-
 	}
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+	
+	deinit {
+		DebugPrint("Controller deinit~~~~")
+	}
 
+}
+
+
+extension LoginController: FileToolProtocol {
+	var root: String {
+		return "/test"
+	}
 }

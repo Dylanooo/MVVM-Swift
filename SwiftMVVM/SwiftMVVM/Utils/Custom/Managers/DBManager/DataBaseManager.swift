@@ -9,8 +9,6 @@
 import UIKit
 import RealmSwift
 
-//private let singleton =
-
 private let dbVersion: UInt64 = 2
 
 class DataBaseManager {
@@ -47,7 +45,7 @@ class DataBaseManager {
 		
 		var path = docPath + "/DataBase/"
 		
-		FilesManager.default.creatFileDirectoryIfNotExit(path)
+		FileTool().creatFileDirectoryIfNotExit(path)
 		
 		path += "AutohomeMall.realm"
 		
@@ -93,4 +91,10 @@ class DataBaseManager {
 	}
 	
 	
+}
+
+extension DataBaseManager: FileToolProtocol {
+	var root: String {
+		return "/DataBase"
+	}
 }

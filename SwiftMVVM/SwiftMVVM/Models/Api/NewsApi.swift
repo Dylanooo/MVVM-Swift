@@ -10,8 +10,11 @@ import UIKit
 
 enum NewsApi<T> {
 	case login
-	case Image(count:Int,page:Int)
+	
+	case Image(count: Int, page: Int)
+	
 	case regester
+	
 	case xxx
 }
 

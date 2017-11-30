@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Dylan.Lee. All rights reserved.
 //  网络请求基本配置（使用前请修改相关配置）
 
-// TODO: 网络请求配置(使用时根据需要增加、修改)
+//  TODO: 网络请求配置(使用时根据需要增加、修改)
 struct NetworkConfig {
   
   /// ***********网络请求基本配置*************

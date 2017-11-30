@@ -28,6 +28,7 @@ public extension UIColor {
 			self.init(red: 0, green: 0, blue: 0, alpha: 0)
 			return
 		}
+		
 		switch hex.count {
 		case 3:
 			self.init(red: CGFloat(((hexNum & 0xF00) >> 8).duplicate4bits) / 255.0,

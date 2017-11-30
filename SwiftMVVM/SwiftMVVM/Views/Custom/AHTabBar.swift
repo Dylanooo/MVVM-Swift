@@ -21,9 +21,13 @@ class AHTabBar: UITabBar {
 	
 	
 	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		
+		super.init(coder: aDecoder)
+		
 	}
+	
 	func drawTabBarBgImageView() -> UIImageView {
+		
 		let radius: CGFloat = 28
 		let standOutHeight: CGFloat = 20
 		let tabBarHeight: CGFloat = self.height
@@ -47,6 +51,7 @@ class AHTabBar: UITabBar {
 		path.addLine(to: CGPoint(x: 0, y: size.height))
 		path.addLine(to: CGPoint(x: 0, y: 0))
 		path.addLine(to: CGPoint(x: size.width/2 - ww, y: 0))
+		
 		layer.path = path.cgPath
 		layer.fillColor = UIColor.white.cgColor
 		layer.lineWidth = 1/UIScreen.main.scale
@@ -71,15 +76,20 @@ class AHTabBar: UITabBar {
 	}
 	
 	@objc func centerBtnClicked() {
+		
 		guard let clickBlock = centerBtnClickedClosure else {
+			
 			return
 		}
+		
 		clickBlock()
 		DebugPrint("点击事件")
 	}
 	
 	override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+		
 		var view = super.hitTest(point, with: event)
+		
 		if view == nil {
 			let newPoint = centerBtn.convert(point, from: self)
 			if centerBtn.bounds.contains(newPoint) {
