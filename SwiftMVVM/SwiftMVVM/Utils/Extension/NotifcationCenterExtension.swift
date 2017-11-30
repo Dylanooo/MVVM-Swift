@@ -55,8 +55,10 @@ extension NSNotification.Name {
 
 enum NotificationName: String {
 
-	case test
+	// 用户登录成功
+	case loginSuccess
 
-	case fuck
+	// 用户退出登录
+	case logout
 
 }

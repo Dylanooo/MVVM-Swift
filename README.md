@@ -4,10 +4,10 @@
 ![MIT](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 
 # MVVM-Swift
-* 基于Swift 4.0的MVVM框架
-* 仿照Moya对Alamofire进行更轻量级的封装,网络请求返回实体或者实体数组
-* 基于当下流行的Realm数据库，封装了一套方便开发者，对数据库CRUD操作的数据库工具类
-* 另外通过灵活使用Swift的语言特性，封装了其他更方便的工具类，使开发者的工作更轻松
+* 基于`Swift 4.0`的`MVVM`框架
+* 仿照`Moya`对`Alamofire`进行更轻量级的封装,网络请求返回实体或者实体数组
+* 基于当下流行的`Realm`数据库，封装了一套方便开发者，对数据库`CRUD`操作的数据库工具类
+* 另外通过灵活使用`Swift`的语言特性，封装了其他更方便的工具类，使开发者的工作更轻松
 
 ## 项目结构
 * Controllers
@@ -53,8 +53,8 @@
 
 ### Utils中部分工具介绍
 
-#### NetworkManager
-*  Model 中实现方式，遵循RealmSwift的写法
+#### 一、 NetworkManager
+*  `Model` 中实现方式，遵循`RealmSwift`的写法
 
 ```
 import UIKit
@@ -80,7 +80,7 @@ class Province: DBModel {
 
 ```
 
-* API 中实现如下：
+* `API` 中实现如下：
 
 ```
 enum UserApi {
@@ -158,7 +158,7 @@ extension UserApi: Request {
 
 ```
 
-* ViewModel 中实现：
+* `ViewModel` 中实现：
 
 ```
 import UIKit
@@ -184,6 +184,33 @@ class UserViewModel: BaseViewModel<UserApi> {
 		})
 	}
 }
+```
+
+### 二、 NotifcationCenterExtension
+通过对`NotificationCenter`封装后，开发者在定义通知名称的时候，只需要在枚举`NotificationName` 中添加对应的`case`就可以了，方便简单
+
+```
+enum NotificationName: String {
+
+	// 用户登录成功
+	case loginSuccess
+
+	// 用户退出登录
+	case logout
+
+}
+
+```
+
+调用时代码可以更加简洁了， 而且可以和调用系统通知格式保持一致：
+
+```
+		// 调用自定义的通知名称
+		NotificationCenter.post(name: .loginSuccess, object: nil, userInfo: nil)
+
+		// 调用系统的通知名称
+		NotificationCenter.post(name: .UIKeyboardDidHide, object: nil, userInfo: nil)
+
 ```
 
 

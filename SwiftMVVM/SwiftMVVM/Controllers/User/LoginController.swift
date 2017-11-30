@@ -39,7 +39,11 @@ class LoginController: UIViewController, KeyboardHandle {
 		viewModel = UserViewModel()
 		
 		setupUI()
-		NotificationCenter.post(name: .fuck, object: nil, userInfo: nil)
+
+		// 调用自定义的通知名称
+		NotificationCenter.post(name: .loginSuccess, object: nil, userInfo: nil)
+
+		// 调用系统的通知名称
 		NotificationCenter.post(name: .UIKeyboardDidHide, object: nil, userInfo: nil)
     }
 
