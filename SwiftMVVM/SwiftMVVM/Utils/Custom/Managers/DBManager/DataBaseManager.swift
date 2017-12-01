@@ -47,7 +47,7 @@ class DataBaseManager {
 		
 		FileTool().creatFileDirectoryIfNotExit(path)
 		
-		path += "AutohomeMall.realm"
+		path += "MVVM.realm"
 		
 		return URL(string: path)!
 	}()

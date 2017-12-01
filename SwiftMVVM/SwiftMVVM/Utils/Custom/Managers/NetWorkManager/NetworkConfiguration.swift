@@ -1,6 +1,6 @@
 //
 //  NetworkConfiguration.swift
-//  AutoHomeFrameWork
+//  MVVMFrameWork
 //
 //  Created by Dylan on 16/5/10.
 //  Copyright © 2016年 Dylan.Lee. All rights reserved.
@@ -13,7 +13,7 @@ struct NetworkConfig {
   /// 路径
   static let kBaseURL = "http://mall.autohome.com.cn"
   /// 域名
-  static let kDomain  = "com.autohome.framework"
+  static let kDomain  = "com.mvvm-swift.framework"
   /// 缓存路径
   static let kCachePath = "MyApp.Cache"
   /// 可接收类型

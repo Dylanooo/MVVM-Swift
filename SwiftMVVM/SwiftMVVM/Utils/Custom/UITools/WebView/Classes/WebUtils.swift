@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class WebUtils {
-	static let defaultDomain = ".autohome.com.cn"
+	static let defaultDomain = ".mvvm.com.cn"
 	class func addCookies(_ cookieCouples: [String: Any], forURL additionalURL: String, domain: String = defaultDomain) {
 		
 		
