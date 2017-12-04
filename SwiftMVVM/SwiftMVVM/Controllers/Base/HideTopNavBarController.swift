@@ -62,7 +62,6 @@ extension HideTopNavBarController: UINavigationControllerDelegate {
 			}
 		}
 		
-		
 		guard hasAddBar else {
 			UIApplication.shared.isStatusBarHidden = false
 			UIApplication.shared.statusBarStyle = .default
