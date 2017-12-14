@@ -1,0 +1,126 @@
+
+/* Class = "UINavigationItem"; title = "用户注册"; ObjectID = "2Kc-hB-GFo"; */
+"2Kc-hB-GFo.title" = "用户注册";
+
+/* Class = "UIButton"; normalTitle = "800"; ObjectID = "38j-Kv-TKa"; */
+"38j-Kv-TKa.normalTitle" = "800";
+
+/* Class = "UITabBarItem"; title = "汽车头条"; ObjectID = "4I2-w0-ckX"; */
+"4I2-w0-ckX.title" = "汽车头条";
+
+/* Class = "UILabel"; text = "再回"; ObjectID = "59A-uy-ksY"; */
+"59A-uy-ksY.text" = "再回";
+
+/* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "7YK-gG-J0J"; */
+"7YK-gG-J0J.placeholder" = "请输入密码";
+
+/* Class = "UIBarButtonItem"; title = "完成"; ObjectID = "9Lb-DI-1hC"; */
+"9Lb-DI-1hC.title" = "完成";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "CcV-BE-3xs"; */
+"CcV-BE-3xs.normalTitle" = "注册";
+
+/* Class = "UILabel"; text = "设置密码"; ObjectID = "D7r-Ox-u67"; */
+"D7r-Ox-u67.text" = "设置密码";
+
+/* Class = "UILabel"; text = "交车"; ObjectID = "DFg-zh-wKV"; */
+"DFg-zh-wKV.text" = "交车";
+
+/* Class = "UILabel"; text = "请输入您的密码并验证"; ObjectID = "EdG-Q9-PEy"; */
+"EdG-Q9-PEy.text" = "请输入您的密码并验证";
+
+/* Class = "UILabel"; text = "手机验证码"; ObjectID = "G6g-Kt-XVU"; */
+"G6g-Kt-XVU.text" = "手机验证码";
+
+/* Class = "UIButton"; normalTitle = "登 录"; ObjectID = "Gh3-T3-Cr4"; */
+"Gh3-T3-Cr4.normalTitle" = "登 录";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "Hb4-b4-Mve"; */
+"Hb4-b4-Mve.title" = "首页";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "JqW-bo-yeY"; */
+"JqW-bo-yeY.text" = "0";
+
+/* Class = "UILabel"; text = "试驾"; ObjectID = "Nl7-Kn-qsW"; */
+"Nl7-Kn-qsW.text" = "试驾";
+
+/* Class = "UIButton"; normalTitle = "90"; ObjectID = "Nyn-iw-gj5"; */
+"Nyn-iw-gj5.normalTitle" = "90";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "PJJ-CP-5Dj"; */
+"PJJ-CP-5Dj.title" = "我的";
+
+/* Class = "UIBarButtonItem"; title = "下一步"; ObjectID = "VAR-pO-XDd"; */
+"VAR-pO-XDd.title" = "下一步";
+
+/* Class = "UILabel"; text = "手机号"; ObjectID = "X72-NT-Hax"; */
+"X72-NT-Hax.text" = "手机号";
+
+/* Class = "UITextField"; placeholder = "请输入账号"; ObjectID = "XJA-bw-aYC"; */
+"XJA-bw-aYC.placeholder" = "请输入账号";
+
+/* Class = "UIButton"; normalTitle = "退出登录"; ObjectID = "bFD-a9-IxP"; */
+"bFD-a9-IxP.normalTitle" = "退出登录";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "bcC-wb-Gc1"; */
+"bcC-wb-Gc1.text" = "0";
+
+/* Class = "UILabel"; text = "本月累计："; ObjectID = "cHy-Qe-kfv"; */
+"cHy-Qe-kfv.text" = "本月累计：";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "dNe-oe-I2C"; */
+"dNe-oe-I2C.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "dwd-az-ff0"; */
+"dwd-az-ff0.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "f55-Bn-36P"; */
+"f55-Bn-36P.text" = "0";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "g6K-1M-2St"; */
+"g6K-1M-2St.text" = "Detail";
+
+/* Class = "UILabel"; text = "请使用已注册的手机号"; ObjectID = "gHd-df-bOq"; */
+"gHd-df-bOq.text" = "请使用已注册的手机号";
+
+/* Class = "UILabel"; text = "今日待匹配"; ObjectID = "gmH-C9-9w2"; */
+"gmH-C9-9w2.text" = "今日待匹配";
+
+/* Class = "UILabel"; text = "验证密码"; ObjectID = "ir3-jn-wm3"; */
+"ir3-jn-wm3.text" = "验证密码";
+
+/* Class = "UILabel"; text = "订单"; ObjectID = "j18-Wb-7Im"; */
+"j18-Wb-7Im.text" = "订单";
+
+/* Class = "UINavigationItem"; title = "设置密码"; ObjectID = "kNR-NY-6zE"; */
+"kNR-NY-6zE.title" = "设置密码";
+
+/* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "lhn-HW-9nn"; */
+"lhn-HW-9nn.normalTitle" = "获取验证码";
+
+/* Class = "UILabel"; text = "建档"; ObjectID = "mxj-EA-grN"; */
+"mxj-EA-grN.text" = "建档";
+
+/* Class = "UINavigationItem"; title = "我"; ObjectID = "nZq-zE-kfp"; */
+"nZq-zE-kfp.title" = "我";
+
+/* Class = "UIButton"; normalTitle = "找回密码"; ObjectID = "pGW-Fm-2MJ"; */
+"pGW-Fm-2MJ.normalTitle" = "找回密码";
+
+/* Class = "UILabel"; text = "请使用未注册的手机号"; ObjectID = "qCw-oY-3p8"; */
+"qCw-oY-3p8.text" = "请使用未注册的手机号";
+
+/* Class = "UILabel"; text = "今日待跟进"; ObjectID = "rTZ-hU-gLF"; */
+"rTZ-hU-gLF.text" = "今日待跟进";
+
+/* Class = "UILabel"; text = "今日任务："; ObjectID = "udH-fq-M2G"; */
+"udH-fq-M2G.text" = "今日任务：";
+
+/* Class = "UILabel"; text = "手机号"; ObjectID = "v65-Wz-ddR"; */
+"v65-Wz-ddR.text" = "手机号";
+
+/* Class = "UINavigationItem"; title = "　修改密码"; ObjectID = "vo6-QT-7BN"; */
+"vo6-QT-7BN.title" = "　修改密码";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "vr9-0a-FCY"; */
+"vr9-0a-FCY.text" = "Title";

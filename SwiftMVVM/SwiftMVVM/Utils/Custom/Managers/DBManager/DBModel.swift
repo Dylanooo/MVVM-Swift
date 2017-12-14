@@ -31,4 +31,5 @@ class DBModel: Object {
 		super.init(value: value, schema: schema)
 	}
 	
+    
 }

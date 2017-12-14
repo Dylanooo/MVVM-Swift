@@ -31,7 +31,7 @@ extension NSObject {
     }
 }
 
-public var cm_defultFixSpace: CGFloat = 0
+public var cm_defultFixSpace: CGFloat = 16
 
 public var cm_disableFixSpace: Bool = false
 

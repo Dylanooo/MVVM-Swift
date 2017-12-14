@@ -41,6 +41,8 @@ class HomeController: UIViewController {
 		let fuckDic: [String: Any?] = ["desName": "lily", "gender": "women", "time": "2017-11-17", "address": "七天酒店", "id": "001"]
 		let fuck = Fuck(value: fuckDic)
 		dm.insertOrUpdate(objects: [fuck])
+        
+        
     }
 	
 	func setupUI() {

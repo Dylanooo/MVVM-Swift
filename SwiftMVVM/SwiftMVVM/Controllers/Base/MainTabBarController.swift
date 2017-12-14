@@ -55,7 +55,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
 	
 	func showPopVC() {
 		
-		let userVC = UIStoryboard.vcInMainSB("UserCenterController")
+		let userVC = UIStoryboard.vcInMainSB("PopoverController")
 		
 		userVC.modalPresentationStyle = .overFullScreen
 		

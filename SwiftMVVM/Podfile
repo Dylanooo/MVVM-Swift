@@ -18,6 +18,6 @@ target 'SwiftMVVM' do
 	# 加载控件
 	pod 'MBProgressHUD', '~> 1.0.0'
 	# 检查网络连接
-	pod 'ReachabilitySwift'
+    #pod 'ReachabilitySwift'
 end
 

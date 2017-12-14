@@ -1,0 +1,34 @@
+/*
+ Localizable.strings
+ SwiftMVVM
+ 
+ Created by 李海洋 on 13/12/2017.
+ Copyright © 2017 Dylan.Lee. All rights reserved.
+ */
+
+/// 请输入账号或密码
+"Tips:account_null" = "请输入账号或密码";
+
+/// 登录失败
+"Tips:login_failed" = "登录失败";
+
+/// 登录中
+"Tips:be_logging_in" = "登录中...";
+
+"Title:password_null" = "请输入密码";
+
+"Title:login_success" = "登录成功";
+
+
+"Title:register_failed" = "注册失败，请重试";
+
+"Title:register_success" = "注册成功，请登录";
+
+"Tips:mobile_null" = "请输入手机号码";
+
+"Title:next" = "下一步";
+
+"Title:complete" = "完成";
+
+
+

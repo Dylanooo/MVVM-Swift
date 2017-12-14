@@ -1,0 +1,18 @@
+/* 
+  InfoPlist.strings
+  SwiftMVVM
+
+  Created by 李海洋 on 2017/12/14.
+  Copyright © 2017年 Dylan.Lee. All rights reserved.
+*/
+// App 名称
+CFBundleDisplayName = "雨燕-MVVM";
+
+// App 权限申请描述
+NSAppleMusicUsageDescription = "请点击「允许」访问媒体资料库";
+NSBluetoothPeripheralUsageDescription = "请点击「允许」访问蓝牙";
+NSCameraUsageDescription = "请点击「允许」访问相机";
+NSLocationAlwaysUsageDescription = "请点击「允许」访问当前位置";
+NSLocationAlwaysAndWhenInUseUsageDescription = "请点击「允许」访问当前位置";
+NSLocationWhenInUseUsageDescription = "请点击「允许」访问当前位置";
+NSPhotoLibraryUsageDescription = "请点击「允许」访问相册";

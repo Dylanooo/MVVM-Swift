@@ -89,6 +89,13 @@ class DataBaseManager {
 			realm.delete(objects)
 		})
 	}
+    
+    func deleteAllObjects<T: DBModel>(type: T.Type) {
+        let objs = queryObjects(type: T.self)
+        try! realm.write({
+            realm.delete(objs)
+        })
+    }
 	
 	
 }

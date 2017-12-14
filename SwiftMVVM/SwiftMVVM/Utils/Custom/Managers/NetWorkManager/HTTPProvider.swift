@@ -12,25 +12,31 @@ import Alamofire
 
 class HTTPProvider<Target: Request> where Target.EntityType: DBModel {
 	
+    private let manager = NetworkManager.sharedInstance
 	
 	/// 网络请求
 	///
 	/// - Parameters:
 	///   - targetType: Api模型
 	///   - responseHandler: 请求回调
-	func request(_ targetType: Target, responseHandler: @escaping ResponseBlock<Target.EntityType>)  {
+    func request(_ targetType: Target, responseHandler: @escaping ResponseBlock<Target.EntityType>)  {
 		
-		NetworkManager.sharedInstance.request(targetType, responseHandler: responseHandler)
+        manager.request(targetType, responseHandler: responseHandler)
 		
 	}
 	
 	@discardableResult
-	func download(_ targetType: Target, response: @escaping ResponseBlock<Target.EntityType>) -> Alamofire.DownloadRequest {
+	func download(_ targetType: Target, response: ResponseBlock<Target.EntityType>) -> Alamofire.DownloadRequest {
 		
 		return NetworkManager.sharedInstance.download(targetType, response: response)
 	}
 	
-	private func downloadProgress(closure: @escaping DownloadProgressBlock) {
+    func upload(_ targetType: Target, response: @escaping ResponseBlock<Target.EntityType>) {
+        
+        NetworkManager.sharedInstance.upload(targetType, responseHandler: response)
+    }
+    
+	private func downloadProgress(closure: DownloadProgressBlock) {
 		
 	}
 }

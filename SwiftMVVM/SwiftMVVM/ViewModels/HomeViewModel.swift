@@ -15,21 +15,18 @@ class HomeViewModel: NSObject {
 		
 		LocationManager.sharedInstance.getUserLocationInfo(cllocation: { location in
 			
-			print("lat = \(location.coordinate.latitude)  lon = \(location.coordinate.longitude)")
+//            print("lat = \(location.coordinate.latitude)  lon = \(location.coordinate.longitude)")
 			
 		}, city: { city in
 			
-			print(city ?? "mm")
+//            print(city ?? "mm")
 			
 		})
 	}
 	
 	func login(account: String, pwd: String, complete: ((String, String) -> Void)) {
 		
-		let UserProvider = HTTPProvider<UserApi>()
+//        let UserProvider = HTTPProvider<UserApi>()
 		
-		UserProvider.request(.login) { response in
-			
-		}
 	}
 }

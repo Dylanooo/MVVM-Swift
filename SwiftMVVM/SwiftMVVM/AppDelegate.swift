@@ -41,9 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	/// Custom methods
 	func setupRootWindow() {
-			let loginVC = UIStoryboard.vcInMainSB("LoginRootViewController")
-			loginVC.view.alpha = 0
-			window?.rootViewController = loginVC
+        
+        
+        /// 根据用户登录状态加载
+        let db = DataBaseManager.default
+        let user = db.queryObjects(type: User.self).first
+        
+        if let _ = user {
+            
+            GlobalUIManager.loadHomeVC()
+            
+        } else {
+            
+            let loginVC = UIStoryboard.vcInMainSB("LoginRootViewController")
+            loginVC.view.alpha = 0
+            window?.rootViewController = loginVC
+            
+        }
 		
 	}
 

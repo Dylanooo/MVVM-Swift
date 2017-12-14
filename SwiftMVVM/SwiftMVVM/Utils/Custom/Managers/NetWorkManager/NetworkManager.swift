@@ -18,7 +18,7 @@ class NetworkManager {
 	static let sharedInstance = NetworkManager()
 	
 	/// SessionManager 实例
-	private lazy var sessionManager: SessionManager = {
+	private var sessionManager: SessionManager = {
 
 		/// set up URLSessiong configure
 		let configuration = URLSessionConfiguration.default
@@ -73,7 +73,7 @@ class NetworkManager {
 	/// - Parameters:
 	///   - targetType: 请求数据模型
 	///   - response: 请求相应
-	func request<T: Request>(_ targetType: T, responseHandler: @escaping ResponseBlock<T.EntityType>)  where T.EntityType: DBModel {
+    func request<T: Request>(_ targetType: T, responseHandler: @escaping ResponseBlock<T.EntityType>)  where T.EntityType: DBModel {
 		
 		var url: URL!
 		
@@ -101,7 +101,7 @@ class NetworkManager {
 			
 			.validate(statusCode: 200..<400)
 			
-			.responseJSON(completionHandler: { [weak self] response in
+			.responseJSON(completionHandler: {[weak self] response in
 				
 				self?.handleResult(response, handler: responseHandler)
 				
@@ -116,7 +116,7 @@ class NetworkManager {
 	///   - destinationPath: 存储路径 默认在沙盒Document下
 	///   - response: 请求相应
 	/// - Returns: 下载请求
-	func download<T: Request>(_ targetType: T, destinationPath: String = "",response: @escaping ResponseBlock<T.EntityType>) -> Alamofire.DownloadRequest where T.EntityType: DBModel {
+	func download<T: Request>(_ targetType: T, destinationPath: String = "",response: ResponseBlock<T.EntityType>) -> Alamofire.DownloadRequest where T.EntityType: DBModel {
 		
 		var url: URL!
 		
@@ -156,6 +156,61 @@ class NetworkManager {
 		
 	}
 	
+    
+    func upload<T: Request>(_ targetType: T, responseHandler: @escaping ResponseBlock<T.EntityType>) where T.EntityType: DBModel {
+        assert(targetType.files != nil, "上传文件不能为空")
+        var url: URL!
+        
+        if targetType.path.contains("https") || targetType.path.contains("http") {
+            
+            url = URL(string: targetType.path)!
+            
+        } else {
+            
+            url = URL(string: targetType.baseURL.appending(targetType.path))!
+            
+        }
+
+        sessionManager.upload(multipartFormData: { multiData in
+            guard let files = targetType.files else {
+                return;
+            }
+            
+            if let parameters = targetType.parameters {
+                
+                for (key, value) in  parameters {
+            
+                    let data = JSON(value)
+                    
+                    let dataStr = data.string
+                    
+                    multiData.append((dataStr?.data(using: .utf8))!, withName: key)
+                }
+            }
+            
+            
+            for file in files {
+                
+                if file.uploadType == .data {
+                    multiData.append(file.data, withName: "file", fileName: file.name, mimeType: file.mimeType)
+                } else {
+                    multiData.append(URL(string: file.filePath)!, withName: file.name, fileName: file.name + file.mimeType, mimeType: file.mimeType)
+                }
+            }
+            
+        }, to: url) { [weak self] encodingResult in
+            
+            switch encodingResult {
+            case .success(let upload, _, _):
+                
+                upload.responseJSON { response in
+                    self?.handleResult(response, handler: responseHandler)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        }
+    }
 	
 	
 	/// 处理返回数据
@@ -183,56 +238,43 @@ class NetworkManager {
 
 						let data = NetworkRetData(respDic)
 
+                        if let resultDatas = data.arrayObject {
+                            
+                            var models = [T]()
+                            
+                            for modelDic in resultDatas {
+                                models.append(T(value: modelDic))
+                            }
+                            
+                            let result = Result(value: nil, code: code, values: models, message: Message.responseMsg(msg).retMsg())
+                            
+                            let customResult = Response<T>.Success(result)
+                            
+                            responseHandler(customResult)
+                            
+                        } else if let resultData = data.dictionaryObject {
+                            
+                            let model = T(value: resultData)
+                            
+                            let result = Result(value: model, code: code, values: nil, message: Message.responseMsg(msg).retMsg())
+                            
+                            let customResult = Response<T>.Success(result)
+                            
+                            responseHandler(customResult)
 
-						if code == 0 { /// 业务请求正常
-							
-							if let resultDatas = data.arrayObject {
-								
-								var models = [T]()
-								
-								for modelDic in resultDatas {
-									models.append(T(value: modelDic))
-								}
-								
-								let result = Result(value: nil, values: models, message: Message.responseMsg(msg).retMsg())
-								
-								let customResult = Response<T>.Success(result)
-								
-								responseHandler(customResult)
-								
-							} else if let resultData = data.dictionaryObject {
-								
-								let model = T(value: resultData)
-								
-								let result = Result(value: model, values: nil, message: Message.responseMsg(msg).retMsg())
-								
-								let customResult = Response<T>.Success(result)
-								
-								responseHandler(customResult)
+                            
+                        } else {
+                            DebugPrint("❌❌❌❌==数据结构异常==❌❌❌❌")
+                            
+                            let error = NetError(code: code, message: msg)
+                            
+                            let customResult = Response<T>.Failure(error)
+                            
+                            responseHandler(customResult)
+                            
+                            
+                        }
 
-								
-							} else {
-								DebugPrint("❌❌❌❌==数据结构异常==❌❌❌❌")
-								
-								let error = NetError(code: code, message: msg)
-								
-								let customResult = Response<T>.Failure(error)
-								
-								responseHandler(customResult)
-								
-							}
-
-						} else { /// 业务请求异常
-
-							DebugPrint("❌❌❌❌==业务请求异常==❌❌❌❌")
-
-							let error = NetError(code: code, message: msg)
-
-							let customResult = Response<T>.Failure(error)
-
-							responseHandler(customResult)
-
-						}
 
 					} else if let respArr = responseObj.arrayObject { /// 直接返回数组
 						
@@ -244,7 +286,7 @@ class NetworkManager {
 							
 						}
 
-						let result = Result<T>(value: nil , values: resultObjs, message: Message.success.retMsg())
+						let result = Result<T>(value: nil, code: 0 , values: resultObjs, message: Message.success.retMsg())
 
 						let customResult = Response<T>.Success(result)
 
@@ -254,7 +296,7 @@ class NetworkManager {
 
 						let responseStr = String(data: response.data!, encoding: .utf8)
 
-						let result = Result<T>(value: T(value: responseStr ?? ""), values: [T(value: responseStr ?? "")], message: Message.success.retMsg())
+						let result = Result<T>(value: T(value: responseStr ?? ""), code: 0, values: [T(value: responseStr ?? "")], message: Message.success.retMsg())
 
 						let customResult = Response.Success(result)
 
@@ -278,7 +320,7 @@ class NetworkManager {
 	/// - Parameters:
 	///   - error: 错误
 	///   - completeHandler: 处理回调
-	func handleError<T>(error: Error?, completeHandler: @escaping ResponseBlock<T>) {
+	func handleError<T>(error: Error?, completeHandler:  ResponseBlock<T>) {
 		
 		var errMsg: String!
 		

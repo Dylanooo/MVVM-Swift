@@ -28,16 +28,8 @@ public protocol Request {
 	/// The files path collection
 	var files: [File]? { get }
 	
-	/// Up load type
-	var fileType: FileType { get }
-	
 	associatedtype EntityType
 	
-}
-
-public enum FileType {
-	case data
-	case path
 }
 
 
@@ -58,9 +50,5 @@ public extension Request {
 	
 	var files: [File]? {
 		return []
-	}
-	
-	var fileType: FileType {
-		return .data
 	}
 }

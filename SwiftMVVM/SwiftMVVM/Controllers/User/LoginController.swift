@@ -69,48 +69,48 @@ class LoginController: UIViewController, KeyboardHandle {
 	@IBAction func loginAction(_ sender: Any) {
 		
 		DebugPrint("登录中")
-		AutoProgressHUD.showAutoHud("登录中....")
+		AutoProgressHUD.showHud(NSLocalizedString("Tips:be_logging_in", comment: ""))
+        
+        guard let pwd = self.pwdTextField.text, let account = self.accountTextField.text else {
+            AutoProgressHUD.showAutoHud(NSLocalizedString("Tips:account_null", comment: ""))
+            return
+        }
 
-		self.viewModel.login(pwd: self.pwdTextField.text,
-							 account: self.accountTextField.text,
-							 complete:
-			{ [unowned self] country in
-				
-				DebugPrint("中国一共\(country.provinces.count)个省份，他们分别是：")
-				
-//				for province in country.provinces {
-//
-//					DebugPrint("名称: \(province.name), 包含\(province.citys.count)个城市")
-//
-//				}
-				self.loadHomeVC()
-								
-		})
+        if pwd.isEmpty || account.isEmpty {
+            AutoProgressHUD.showAutoHud(NSLocalizedString("Tips:account_null", comment: ""))
+            return
+        }
+
+        self.viewModel.login(pwd: pwd,
+                             account: account,
+                             complete:
+            { user in
+                
+                AutoProgressHUD.hideHud()
+                
+                if let user = user  {
+                    
+                    let dm = DataBaseManager.default
+                    dm.deleteAllObjects(type: User.self)
+                    dm.insertOrUpdate(objects: [user])
+                    GlobalUIManager.loadHomeVC()
+                    
+                } else {
+                    
+                    AutoProgressHUD.showAutoHud(NSLocalizedString("Tips:login_failed", comment: ""))
+                    
+                }
+                
+        })
 	}
 	
-	func loadHomeVC() {
-		let kWindow: UIWindow = UIApplication.shared.keyWindow!
-		let rootVC = UIStoryboard.vcInMainSB("MainTabBarController")
-		rootVC.modalTransitionStyle = .crossDissolve
-		UIView.transition(with: kWindow,
-						  duration: 1,
-						  options: .transitionCrossDissolve,
-						  animations: {
-							let oldState = UIView.areAnimationsEnabled
-							UIView.setAnimationsEnabled(false)
-							kWindow.rootViewController = rootVC
-							UIView.setAnimationsEnabled(oldState)
-							
-		}, completion: nil)
-		
-	}
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 	
 	deinit {
-		DebugPrint("Controller deinit~~~~")
+        DebugPrint("Controller deinit~~~~")
 	}
 
 }

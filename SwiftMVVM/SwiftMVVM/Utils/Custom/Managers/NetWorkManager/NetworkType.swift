@@ -18,6 +18,8 @@ struct Result<T> {
 	// Response`s Value
 	var value: T?
 	
+    var code: Int
+    
 	var values: [T]?
 	
 	// Description of Response
@@ -114,6 +116,15 @@ enum Response<T> {
 			
 		}
 	}
+    
+    var code: Int {
+        switch self {
+        case .Success(let result):
+            return result.code
+        case .Failure(let error):
+            return error.code
+        }
+    }
 	
 	var values: [T]? {
 		
