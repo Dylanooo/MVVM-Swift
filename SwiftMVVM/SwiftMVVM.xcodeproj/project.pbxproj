@@ -90,6 +90,7 @@
 		C802859E1FE273050034E6DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C80285A01FE273050034E6DB /* Localizable.strings */; };
 		C89EA2061FE27CAA004BD080 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C89EA2051FE27CAA004BD080 /* Info.plist */; };
 		C89EA2091FE27CF8004BD080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C89EA20B1FE27CF8004BD080 /* InfoPlist.strings */; };
+		C8B40C301FE3C6FA00229171 /* PublishArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B40C2F1FE3C6FA00229171 /* PublishArticleController.swift */; };
 		D56C8EF2AEC761C16667A41F /* Pods_SwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE625F5CA1F0EDA4D3C5EC5 /* Pods_SwiftMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,7 @@
 		C89EA2051FE27CAA004BD080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C89EA20A1FE27CF8004BD080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C89EA20C1FE27CFB004BD080 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		C8B40C2F1FE3C6FA00229171 /* PublishArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishArticleController.swift; sourceTree = "<group>"; };
 		DEE625F5CA1F0EDA4D3C5EC5 /* Pods_SwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -342,6 +344,7 @@
 		C80284D41FE270980034E6DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C8B40C2E1FE3C69100229171 /* Article */,
 				C80284D51FE270980034E6DB /* Home */,
 				C80284D71FE270980034E6DB /* User */,
 				C80284DE1FE270980034E6DB /* PlaceHolder */,
@@ -639,6 +642,14 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		C8B40C2E1FE3C69100229171 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				C8B40C2F1FE3C6FA00229171 /* PublishArticleController.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -801,6 +812,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -812,6 +824,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -875,6 +888,7 @@
 				C802856E1FE270990034E6DB /* AppManager.swift in Sources */,
 				C80285451FE270990034E6DB /* PlaceHolderViewController.swift in Sources */,
 				C80285821FE270990034E6DB /* HomeViewModel.swift in Sources */,
+				C8B40C301FE3C6FA00229171 /* PublishArticleController.swift in Sources */,
 				C80285561FE270990034E6DB /* Fuck.swift in Sources */,
 				C80285781FE270990034E6DB /* WebUtils.swift in Sources */,
 				C80284891FE26C150034E6DB /* ViewController.swift in Sources */,
@@ -1128,8 +1142,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEPLOYMENT_LOCATION = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1148,8 +1162,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEPLOYMENT_LOCATION = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

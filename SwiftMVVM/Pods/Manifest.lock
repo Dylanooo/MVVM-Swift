@@ -10,6 +10,7 @@ PODS:
   - SnapKit (4.0.0)
   - SwiftyBeaver (1.4.3)
   - SwiftyJSON (3.1.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyBeaver
   - SwiftyJSON (~> 3.1.4)
+  - YYText
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -29,7 +31,8 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9038240d5e449dd7543408a2f2b6cd927898dde6
+PODFILE CHECKSUM: 430d637f3bc4674246c580d1eec7cc8b5a7f7563
 
 COCOAPODS: 1.3.1

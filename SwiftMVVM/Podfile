@@ -17,7 +17,7 @@ target 'SwiftMVVM' do
 	pod 'SwiftyBeaver'
 	# 加载控件
 	pod 'MBProgressHUD', '~> 1.0.0'
-	# 检查网络连接
-    #pod 'ReachabilitySwift'
+    # 图文混排
+    pod 'YYText'
 end
 

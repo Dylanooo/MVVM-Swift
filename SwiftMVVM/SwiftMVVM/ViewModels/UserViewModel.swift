@@ -20,7 +20,11 @@ class UserViewModel: BaseViewModel<UserApi> {
             DebugPrint("values = \(String(describing: response.values))")
 
             if response.success {
-                complete(response.value!)
+                if response.code == 0 {
+                    complete(response.value!)
+                } else {
+                    complete(nil)
+                }
                 
             } else {
                 

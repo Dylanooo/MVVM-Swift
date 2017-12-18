@@ -20,6 +20,7 @@ class GlobalUIManager {
                             let oldState = UIView.areAnimationsEnabled
                             UIView.setAnimationsEnabled(false)
                             kWindow.rootViewController = rootVC
+                            kWindow.makeKeyAndVisible()
                             UIView.setAnimationsEnabled(oldState)
                             
         }, completion: nil)
@@ -38,6 +39,7 @@ class GlobalUIManager {
                             let oldState = UIView.areAnimationsEnabled
                             UIView.setAnimationsEnabled(false)
                             kWindow.rootViewController = rootVC
+                            kWindow.makeKeyAndVisible()
                             UIView.setAnimationsEnabled(oldState)
     })
     }

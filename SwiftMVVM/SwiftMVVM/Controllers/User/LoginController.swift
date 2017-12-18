@@ -25,7 +25,7 @@ class LoginController: UIViewController, KeyboardHandle {
 	override func viewDidLoad() {
 		
         super.viewDidLoad()
-		
+		print("测试环境")
 		FileTool().creatFileIfNotExit(name: "testttttt.txt")
 		
 //		let img = UIImage(named: "IMG_Cool_Car_5")
@@ -83,13 +83,10 @@ class LoginController: UIViewController, KeyboardHandle {
 
         self.viewModel.login(pwd: pwd,
                              account: account,
-                             complete:
-            { user in
-                
-                AutoProgressHUD.hideHud()
-                
+                             complete: { user in
+                                
                 if let user = user  {
-                    
+                    AutoProgressHUD.hideHud()
                     let dm = DataBaseManager.default
                     dm.deleteAllObjects(type: User.self)
                     dm.insertOrUpdate(objects: [user])

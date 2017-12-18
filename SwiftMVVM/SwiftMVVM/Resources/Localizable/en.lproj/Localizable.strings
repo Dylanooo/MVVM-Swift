@@ -29,4 +29,20 @@
 
 "Title:complete" = "Complete";
 
+"Title:user_id" = "Identifier：";
+
+"Title:user_name" = "Name：";
+"Title:user_age" = "Age：";
+"Title:user_nickname" = "Nickname：";
+
+"Title:user_address" = "Address：";
+
+"Title:user_gender" = "Gender：";
+"Title:user_mobile" = "Mobile：";
+"Title:user_password" = "Password：";
+"Title:gender_male" = "Male";
+"Title:gender_female" = "Female";
+"Title:age" = " years old";
+
+
 

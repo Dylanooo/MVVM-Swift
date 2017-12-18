@@ -24,7 +24,7 @@ extension UserApi: Request {
 
 	/// host 如果项目中所有host可以保持一致，直接在Request中设置默认Host，在具体的Api中可省略
 	var baseURL: String {
-        return "http://10.169.2.46:8080/api/user/"
+        return "http://10.169.2.41:8080/api/user/"
 	}
 
 

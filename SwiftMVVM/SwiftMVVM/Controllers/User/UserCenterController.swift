@@ -11,11 +11,13 @@ import UIKit
 class UserCenterController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headPicView: UIImageView!
     var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         let db = DataBaseManager.default
         user = db.queryObjects(type: User.self).first
+        headPicView.kf.setImage(with: URL(string: user?.headPic ?? ""))
         tableView.reloadData()
     }
     
@@ -34,6 +36,7 @@ class UserCenterController: UIViewController {
     
 }
 
+
 extension UserCenterController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -44,21 +47,21 @@ extension UserCenterController: UITableViewDelegate, UITableViewDataSource {
         if let user = user {
             switch indexPath.row {
             case 0:
-                title = "编号：" + "\(user.id)"
+                title = NSLocalizedString("Title:user_id", comment: "") + "\(user.id)"
             case 1:
-                title = "姓名：" + user.name
+                title = NSLocalizedString("Title:user_name", comment: "") + user.name
             case 2:
-                title = "年龄：" + "\(user.age)岁"
+                title = NSLocalizedString("Title:user_age", comment: "") + "\(user.age)" + NSLocalizedString("Title:age", comment: "");
             case 3:
-                title = "昵称：" + user.nickName
+                title = NSLocalizedString("Title:user_nickname", comment: "") + user.nickName
             case 4:
-                title = "地址：" + user.address
+                title = NSLocalizedString("Title:user_address", comment: "") + user.address
             case 5:
-                title = "性别：" + (user.gender == 0 ? "女" : "男")
+                title = NSLocalizedString("Title:user_gender", comment: "") + (user.gender == 0 ? NSLocalizedString("Title:gender_female", comment: "") : NSLocalizedString("Title:gender_male", comment: ""))
             case 6:
-                title = "电话：" + user.mobile
+                title = NSLocalizedString("Title:user_mobile", comment: "") + user.mobile
             case 7:
-                title = "密码：" + user.pwd
+                title = NSLocalizedString("Title:user_password", comment: "") + user.pwd
             default:
                 title = ""
             }

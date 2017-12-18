@@ -66,10 +66,13 @@ extension UIViewController {
 		guard (navigationController?.viewControllers.count ?? 0) > 1 else {
 			return
 		}
-
-		navigationItem.leftBarButtonItem =  UIBarButtonItem(image: UIImage(named: "icon_back_arrow_gray"),
+        
+        let imgName = (navigationController is HideTopNavBarController) ? "icon_back_arrow_gray" : "icon_back_arrow"
+        
+		navigationItem.leftBarButtonItem =  UIBarButtonItem(image: UIImage(named: imgName),
 															target: self,
 															action: #selector(popToLastVC))
+        
 		navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
 	}
 	
