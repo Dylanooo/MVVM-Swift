@@ -2,7 +2,7 @@
 //  SetPasswordController.swift
 //  SwiftMVVM
 //
-//  Created by 李海洋 on 13/12/2017.
+//  Created by Dylan.Lee on 13/12/2017.
 //  Copyright © 2017 Dylan.Lee. All rights reserved.
 //
 

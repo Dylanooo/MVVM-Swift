@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - Kingfisher (4.4.0)
+  - Kingfisher (4.5.0)
   - MBProgressHUD (1.0.0)
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
@@ -8,7 +8,7 @@ PODS:
   - RealmSwift (3.0.2):
     - Realm (= 3.0.2)
   - SnapKit (4.0.0)
-  - SwiftyBeaver (1.4.3)
+  - SwiftyBeaver (1.5.0)
   - SwiftyJSON (3.1.4)
   - YYText (1.0.7)
 
@@ -24,12 +24,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Kingfisher: 62a43e03047a1ac5159d0be3ac62673ef4b99cc3
+  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
+  SwiftyBeaver: 384235c59d9c67b4a5e1810cffa713babba34efd
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 

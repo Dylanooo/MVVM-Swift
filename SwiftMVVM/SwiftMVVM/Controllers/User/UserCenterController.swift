@@ -2,7 +2,7 @@
 //  UserCenterController.swift
 //  SwiftMVVM
 //
-//  Created by 李海洋 on 14/12/2017.
+//  Created by Dylan.Lee on 14/12/2017.
 //  Copyright © 2017 Dylan.Lee. All rights reserved.
 //
 

@@ -5,7 +5,7 @@
 
 # MVVM-Swift
 * 基于`Swift 4.0`的`MVVM`框架
-* 仿照`Moya`对`Alamofire`进行更轻量级的封装,网络请求返回实体或者实体数组
+* 仿照`Moya`对`Alamofire`进行更轻量级的封装,网络请求返回实体或者实体数组（双刃剑，缺点在于对于简单数据结构也需要创建相应的实体对象，优点是保持项目结构统一，后续会优化）
 * 基于当下流行的`Realm`数据库，封装了一套方便开发者，对数据库`CRUD`操作的数据库工具类
 * 另外通过灵活使用`Swift`的语言特性，封装了其他更方便的工具类，使开发者的工作更轻松
 
@@ -207,11 +207,11 @@ enum NotificationName: String {
 调用时代码可以更加简洁了， 而且可以和调用系统通知格式保持一致：
 
 ```
-		// 调用自定义的通知名称
-		NotificationCenter.post(name: .loginSuccess, object: nil, userInfo: nil)
+    // 调用自定义的通知名称
+    NotificationCenter.post(name: .loginSuccess, object: nil, userInfo: nil)
 
-		// 调用系统的通知名称
-		NotificationCenter.post(name: .UIKeyboardDidHide, object: nil, userInfo: nil)
+    // 调用系统的通知名称
+    NotificationCenter.post(name: .UIKeyboardDidHide, object: nil, userInfo: nil)
 
 ```
 

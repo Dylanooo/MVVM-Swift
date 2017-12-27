@@ -88,14 +88,20 @@ class AHTabBar: UITabBar {
 	
 	override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 		
-		var view = super.hitTest(point, with: event)
+        /// 防止在其他页面也相应点击中间按钮事件
+        if !self.isHidden {
+            var view = super.hitTest(point, with: event)
+   
+            if view == nil {
+                let newPoint = centerBtn.convert(point, from: self)
+                if centerBtn.bounds.contains(newPoint) {
+                    view = centerBtn
+                }
+            }
+            return view
+        } else {
+            return super.hitTest(point, with: event)
+        }
 		
-		if view == nil {
-			let newPoint = centerBtn.convert(point, from: self)
-			if centerBtn.bounds.contains(newPoint) {
-				view = centerBtn
-			}
-		}
-		return view
 	}
 }

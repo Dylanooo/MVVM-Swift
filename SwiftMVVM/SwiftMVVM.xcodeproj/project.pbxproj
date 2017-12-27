@@ -42,10 +42,9 @@
 		C80285581FE270990034E6DB /* TestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80284FC1FE270980034E6DB /* TestApi.swift */; };
 		C80285591FE270990034E6DB /* ProvinceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80284FD1FE270980034E6DB /* ProvinceApi.swift */; };
 		C802855A1FE270990034E6DB /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80284FE1FE270980034E6DB /* NewsApi.swift */; };
-		C802855B1FE270990034E6DB /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = C80285001FE270990034E6DB /* AutoGenStrings.py */; };
 		C802855C1FE270990034E6DB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285031FE270990034E6DB /* UIColorExtension.swift */; };
 		C802855D1FE270990034E6DB /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285041FE270990034E6DB /* NSObjectExtension.swift */; };
-		C802855E1FE270990034E6DB /* NotifcationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285051FE270990034E6DB /* NotifcationCenterExtension.swift */; };
+		C802855E1FE270990034E6DB /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285051FE270990034E6DB /* NotificationCenterExtension.swift */; };
 		C802855F1FE270990034E6DB /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285061FE270990034E6DB /* UIApplicationExtension.swift */; };
 		C80285601FE270990034E6DB /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285071FE270990034E6DB /* NSUserDefaultsExtension.swift */; };
 		C80285611FE270990034E6DB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80285081FE270990034E6DB /* UIViewControllerExtension.swift */; };
@@ -88,9 +87,11 @@
 		C802858B1FE271B30034E6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80285871FE271B30034E6DB /* Main.storyboard */; };
 		C802858C1FE271B30034E6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80285891FE271B30034E6DB /* LaunchScreen.storyboard */; };
 		C802859E1FE273050034E6DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C80285A01FE273050034E6DB /* Localizable.strings */; };
-		C89EA2061FE27CAA004BD080 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C89EA2051FE27CAA004BD080 /* Info.plist */; };
+		C82A7A581FE7A63F00EF2C52 /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82A7A571FE7A63F00EF2C52 /* MicrophoneView.swift */; };
+		C82A7A5B1FE7A7C100EF2C52 /* lorem.txt in Resources */ = {isa = PBXBuildFile; fileRef = C82A7A5A1FE7A7C100EF2C52 /* lorem.txt */; };
 		C89EA2091FE27CF8004BD080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C89EA20B1FE27CF8004BD080 /* InfoPlist.strings */; };
 		C8B40C301FE3C6FA00229171 /* PublishArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B40C2F1FE3C6FA00229171 /* PublishArticleController.swift */; };
+		C8C4E4B11FE90D45009B0B1C /* Illustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C4E4B01FE90D44009B0B1C /* Illustration.swift */; };
 		D56C8EF2AEC761C16667A41F /* Pods_SwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE625F5CA1F0EDA4D3C5EC5 /* Pods_SwiftMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,7 +158,7 @@
 		C80285001FE270990034E6DB /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		C80285031FE270990034E6DB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C80285041FE270990034E6DB /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
-		C80285051FE270990034E6DB /* NotifcationCenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifcationCenterExtension.swift; sourceTree = "<group>"; };
+		C80285051FE270990034E6DB /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		C80285061FE270990034E6DB /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		C80285071FE270990034E6DB /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		C80285081FE270990034E6DB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -206,10 +207,13 @@
 		C80285941FE271DF0034E6DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C802859F1FE273050034E6DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C80285A11FE273070034E6DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C82A7A571FE7A63F00EF2C52 /* MicrophoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneView.swift; sourceTree = "<group>"; };
+		C82A7A5A1FE7A7C100EF2C52 /* lorem.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lorem.txt; sourceTree = "<group>"; };
 		C89EA2051FE27CAA004BD080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C89EA20A1FE27CF8004BD080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C89EA20C1FE27CFB004BD080 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		C8B40C2F1FE3C6FA00229171 /* PublishArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishArticleController.swift; sourceTree = "<group>"; };
+		C8C4E4B01FE90D44009B0B1C /* Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illustration.swift; sourceTree = "<group>"; };
 		DEE625F5CA1F0EDA4D3C5EC5 /* Pods_SwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -317,6 +321,7 @@
 		C80284B51FE26EA90034E6DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C82A7A591FE7A7AB00EF2C52 /* Document */,
 				C80285951FE272770034E6DB /* Localizable */,
 				C80285851FE271520034E6DB /* Assets.xcassets */,
 				C80284B61FE26EA90034E6DB /* Interface */,
@@ -426,6 +431,8 @@
 			isa = PBXGroup;
 			children = (
 				C80284ED1FE270980034E6DB /* LaunchedTransitionView.swift */,
+				C82A7A571FE7A63F00EF2C52 /* MicrophoneView.swift */,
+				C8C4E4B01FE90D44009B0B1C /* Illustration.swift */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -496,7 +503,7 @@
 			children = (
 				C80285031FE270990034E6DB /* UIColorExtension.swift */,
 				C80285041FE270990034E6DB /* NSObjectExtension.swift */,
-				C80285051FE270990034E6DB /* NotifcationCenterExtension.swift */,
+				C80285051FE270990034E6DB /* NotificationCenterExtension.swift */,
 				C80285061FE270990034E6DB /* UIApplicationExtension.swift */,
 				C80285071FE270990034E6DB /* NSUserDefaultsExtension.swift */,
 				C80285081FE270990034E6DB /* UIViewControllerExtension.swift */,
@@ -642,6 +649,14 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		C82A7A591FE7A7AB00EF2C52 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				C82A7A5A1FE7A7C100EF2C52 /* lorem.txt */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
 		C8B40C2E1FE3C69100229171 /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,7 +737,7 @@
 				TargetAttributes = {
 					C80284821FE26C140034E6DB = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					C80284961FE26C150034E6DB = {
 						CreatedOnToolsVersion = 9.2;
@@ -768,15 +783,14 @@
 				C802859E1FE273050034E6DB /* Localizable.strings in Resources */,
 				C89EA2091FE27CF8004BD080 /* InfoPlist.strings in Resources */,
 				C802857E1FE270990034E6DB /* jquery-2.2.0.js in Resources */,
+				C82A7A5B1FE7A7C100EF2C52 /* lorem.txt in Resources */,
 				C802857A1FE270990034E6DB /* holder.png in Resources */,
-				C89EA2061FE27CAA004BD080 /* Info.plist in Resources */,
 				C802858B1FE271B30034E6DB /* Main.storyboard in Resources */,
 				C80285471FE270990034E6DB /* HideNavConfigure.plist in Resources */,
 				C802857F1FE270990034E6DB /* jquery.lazyload.js in Resources */,
 				C802857C1FE270990034E6DB /* app.css in Resources */,
 				C802858C1FE271B30034E6DB /* LaunchScreen.storyboard in Resources */,
 				C80285861FE271520034E6DB /* Assets.xcassets in Resources */,
-				C802855B1FE270990034E6DB /* AutoGenStrings.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +917,7 @@
 				C80285771FE270990034E6DB /* WebViewController.swift in Sources */,
 				C80285631FE270990034E6DB /* UIViewExtension.swift in Sources */,
 				C802854C1FE270990034E6DB /* DispatchQueueExtension.swift in Sources */,
+				C8C4E4B11FE90D45009B0B1C /* Illustration.swift in Sources */,
 				C80285421FE270990034E6DB /* UserCenterController.swift in Sources */,
 				C80285641FE270990034E6DB /* StringExtension.swift in Sources */,
 				C802854A1FE270990034E6DB /* UIBarButtonItemFixSpace.swift in Sources */,
@@ -918,13 +933,14 @@
 				C80285591FE270990034E6DB /* ProvinceApi.swift in Sources */,
 				C80285401FE270990034E6DB /* LoginController.swift in Sources */,
 				C802854D1FE270990034E6DB /* LaunchedTransitionView.swift in Sources */,
+				C82A7A581FE7A63F00EF2C52 /* MicrophoneView.swift in Sources */,
 				C80285721FE270990034E6DB /* LocationManager.swift in Sources */,
 				C802856C1FE270990034E6DB /* NetworkConfiguration.swift in Sources */,
 				C802853F1FE270990034E6DB /* SignInTwoController.swift in Sources */,
 				C802854F1FE270990034E6DB /* PlaceHolderNavBar.swift in Sources */,
 				C80284871FE26C150034E6DB /* AppDelegate.swift in Sources */,
 				C80285741FE270990034E6DB /* DataBaseManager.swift in Sources */,
-				C802855E1FE270990034E6DB /* NotifcationCenterExtension.swift in Sources */,
+				C802855E1FE270990034E6DB /* NotificationCenterExtension.swift in Sources */,
 				C80285531FE270990034E6DB /* File.swift in Sources */,
 				C80285691FE270990034E6DB /* NetworkManager.swift in Sources */,
 				C80285751FE270990034E6DB /* AutoProgressHUD.swift in Sources */,
@@ -1141,14 +1157,15 @@
 			baseConfigurationReference = 86876A239E5795A81EC62B98 /* Pods-SwiftMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEPLOYMENT_LOCATION = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 68X5R2774N;
 				INFOPLIST_FILE = SwiftMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.SwiftMVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autohome.mall.merchant.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -1161,14 +1178,15 @@
 			baseConfigurationReference = 6D8E7FF140DBF47494494AFB /* Pods-SwiftMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEPLOYMENT_LOCATION = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 68X5R2774N;
 				INFOPLIST_FILE = SwiftMVVM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.SwiftMVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autohome.mall.merchant.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

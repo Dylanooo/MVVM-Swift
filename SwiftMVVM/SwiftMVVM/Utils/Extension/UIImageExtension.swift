@@ -141,6 +141,18 @@ public extension UIImage {
 		context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: srcSize.width, height: srcSize.height))
 		return UIGraphicsGetImageFromCurrentImageContext()
 	}
+    
+    public func scaleTo(width: CGFloat) -> UIImage? {
+        let size = CGSize(width: width, height: self.size.height * width / self.size.width)
+        return scaleTo(size: size)
+    }
+    
+    public func scaleTo(height: CGFloat) -> UIImage? {
+        let size = CGSize(width: height * self.size.width / self.size.height, height: height)
+        return scaleTo(size: size)
+    }
+    
+    
 	
 	public func scaleTo(fitSize targetSize: CGSize, scaleIfSmaller: Bool = false) -> UIImage? {
 		let srcSize = self.size

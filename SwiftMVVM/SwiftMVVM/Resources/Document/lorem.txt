@@ -1,0 +1,95 @@
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Apple 产品在中国的硬件保修政策
+iPhone
+保修期限
+
+iPhone 整机及所含附件自原始购买之日起享有 1 年保修期。
+可另外购买 AppleCare＋全方位服务计划。
+维修方式
+
+根据具体的故障情况对设备进行修理或更换。
+可以修理或更换的部件包括但不限于电池、显示屏、主板等。
+所有更换的部件、附件或设备都是全新的。
+更换的部件、附件享受原有 1 年保修期的剩余时长或者自修理或更换日起 90 天的保修期，以二者中期限较长者为准。
+如果附件出现问题，会更换全新的附件。
+iPad
+保修期限
+
+iPad 整机及所含附件自原始购买之日起享有 1 年保修期。
+主要部件享有 2 年保修期，主要部件指主板 (MLB)、内存、硬盘 (HDD/SSD)、显示屏 (LCD) 和交流电源适配器。
+可另外购买 AppleCare＋全方位服务计划。
+维修方式
+
+根据具体的故障情况对设备进行修理或更换。
+所有更换的附件和设备都是全新的。
+更换的部件、附件享受原有 1 年保修期的剩余时长或自更换日起 90 天的保修期，以二者中期限较长者为准。更换后的主要部件享有重新计算的 2 年保修期。
+如果附件出现问题，会更换全新的附件。
+iPod touch
+保修期限
+
+iPod touch 整机及所含附件自原始购买之日起享有 1 年保修期。
+可另外购买 AppleCare＋全方位服务计划。
+维修方式
+
+根据具体的故障情况更换一部全新的 iPod touch。
+如果附件出现问题，会更换全新的附件。
+更换的附件享受原有 1 年保修期的剩余时长或自更换日起 90 天的保修期，以二者中期限较长者为准。
+Mac
+保修期限
+
+Mac 电脑整机及所含附件自原始购买之日起享有 1 年保修期。
+主要部件享有自购买之日起 2 年保修期。
+Mac 台式电脑所有主要部件包括：主板 (MLB)、处理器 (CPU)、内存、硬盘 (HDD/SSD)、电源和显卡。
+Mac 笔记本电脑所有主要部件范围包括主板 (MLB)、处理器 (CPU)、内存、硬盘 (HDD/SSD)、电源适配器、键盘和显示屏 (LCD)。
+可另外购买 AppleCare Protection Plan 全方位服务计划。
+维修方式
+
+根据具体的故障情况对设备进行维修。
+所有更换的部件和附件都是全新的。
+更换的非主要部件和附件享受原有保修期的剩余时长或自更换日起 90 天的保修期，以二者中期限较长者为准。更换后的主要部件享有重新计算的 2 年保修期。
+Apple Watch
+保修期限
+
+Apple Watch 、Apple Watch Sport 及所含 Apple 品牌附件(不含表带）自原始购买之日起享有 1 年保修期。
+Apple Watch Edition 、Apple Watch Hermès 及所含 Apple 品牌附件（不含表带）自原始购买之日起享有 2 年保修期。
+可另外购买 AppleCare+ 全方位服务计划。
+维修方式
+
+根据具体的故障情况对设备进行软件恢复、维修或更换。
+如果附件出现功能性故障，会更换全新的附件。
+更换的附件享受原有保修期的剩余时长或自更换日起90 天的保修期，以二者中期限较长者为准。
+Beats
+保修期限
+
+Beats 品牌硬件产品（耳机、扬声器）自原始购买之日起享有 1 年保修期。
+维修方式
+
+根据具体的故障情况对设备进行修理或更换。
+更换的部件和附件享受原有 1 年保修期的剩余时长或自更换日起90 天的保修期，以二者中期限较长者为准。
+根据中国的三包法律和法规，上述政策仅适用于在中国大陆购买的 Apple 产品。请在购买 Apple 产品时检查 产品出售时是否带有 Apple 的三包保修卡，以确保其可受中国的三包法律和法规保护。如果产品是从中国大陆以外的地区购买，则不在中国的三包法律和法规涵盖的范围内。点按此处了解有关 Apple 的服务政策的进一步信息。
+在三包范围内，如果发生整机更换（不包括附件及耳机类产品），更换后的产品保修期自更换之日起重新计算。
+为了保障您的合法权益，请通过 Apple 官网指定的Apple Retail Store 和 Apple 授权服务提供商获得 Apple 产品的维修。任何未经授权的改装、拆卸、及非 Apple 授权的维修等情形将可能导致无法获得保修及保外维修资格。
+根据产品送修时的故障现象，Apple Retail Store 和 Apple 授权服务提供商通过专业的分析确定设备的维修方式：在门店进行检测/修理（现场维修）或寄送至 Apple 维修中心检测/修理（寄修）。寄修的设备将由 Apple 维修中心通过专业的诊断进行检测并确定相应的维修方案。Apple 维修中心对于部分型号的iPhone能够提供显示屏、主板等部件的高质量维修服务。
+在法律允许的范围内，上述保修政策可能不时更新，具体请咨询各授权维修点。
+如果您的产品符合保外维修的条件，Apple 可以提供收费维修服务。保外维修更换后的部件或附件享有 90 天的有限保修期。如果您已购买 AppleCare 全方位服务计划，请参阅 AppleCare 全方位服务计划条款和条件。

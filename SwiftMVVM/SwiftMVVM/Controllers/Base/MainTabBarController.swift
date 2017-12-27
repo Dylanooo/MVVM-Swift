@@ -27,7 +27,11 @@ class MainTabBarController: UITabBarController {
 		self.setValue(tabBar, forKey: "tabBar")
 		
 		UIApplication.shared.isStatusBarHidden = false
-		
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
     }
 	
 	override var prefersStatusBarHidden: Bool {

@@ -2,7 +2,7 @@
   InfoPlist.strings
   SwiftMVVM
 
-  Created by 李海洋 on 2017/12/14.
+  Created by Dylan.Lee on 2017/12/14.
   Copyright © 2017年 Dylan.Lee. All rights reserved.
 */
 CFBundleDisplayName = "Swift-MVVM";
@@ -14,3 +14,5 @@ NSLocationAlwaysUsageDescription = "Please click 「Allow」to use location";
 NSLocationAlwaysAndWhenInUseUsageDescription = "Please click 「Allow」to use location";
 NSLocationWhenInUseUsageDescription = "Please click 「Allow」to use location";
 NSPhotoLibraryUsageDescription = "Please click 「Allow」to use photo library";
+NSMicrophoneUsageDescription = "Please click 「Allow」to use microphone";
+NSSpeechRecognitionUsageDescription = "Please click 「Allow」to use speech recognition";

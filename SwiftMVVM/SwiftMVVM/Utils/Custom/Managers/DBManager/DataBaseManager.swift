@@ -68,7 +68,7 @@ class DataBaseManager {
 	/// 插入或更新数据
 	///
 	/// - Parameter objects: 需要插入的数据
-	///		let testDic: [String: Any?] = ["time": "2017-08-12", "author": "李海洋001", "articleid": 1, "title": "测试数据库工具", "id": "002"];
+	///		let testDic: [String: Any?] = ["time": "2017-08-12", "author": "Dylan.Lee001", "articleid": 1, "title": "测试数据库工具", "id": "002"];
 	///		let test = Test(value: testDic)
 	/// 	let dm = DataBaseManager.default
 	///	    dm.insertOrUpdate(objects: [test])
