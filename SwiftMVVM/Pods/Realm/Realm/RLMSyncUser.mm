@@ -22,12 +22,13 @@
 #import "RLMNetworkClient.h"
 #import "RLMRealmConfiguration+Sync.h"
 #import "RLMRealmConfiguration_Private.hpp"
+#import "RLMRealmUtil.hpp"
 #import "RLMResults_Private.hpp"
 #import "RLMSyncManager_Private.h"
 #import "RLMSyncPermissionResults.h"
 #import "RLMSyncPermission_Private.hpp"
-#import "RLMSyncSession_Private.hpp"
 #import "RLMSyncSessionRefreshHandle.hpp"
+#import "RLMSyncSession_Private.hpp"
 #import "RLMSyncUtil_Private.hpp"
 #import "RLMUtil.hpp"
 
@@ -298,16 +299,53 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
                                    userInfo:nil]);
         return;
     }
-    [RLMNetworkClient sendRequestToEndpoint:[RLMSyncChangePasswordEndpoint endpoint]
-                                     server:self.authenticationServer
+    [RLMSyncChangePasswordEndpoint sendRequestToServer:self.authenticationServer
                                        JSON:@{kRLMSyncTokenKey: self._refreshToken,
                                               kRLMSyncUserIDKey: userID,
-                                              kRLMSyncDataKey: @{ kRLMSyncNewPasswordKey: newPassword }
-                                              }
-                                    timeout:60
-                                 completion:^(NSError *error, __unused NSDictionary *json) {
-        completion(error);
-    }];
+                                              kRLMSyncDataKey: @{kRLMSyncNewPasswordKey: newPassword}}
+                                    options:[[RLMSyncManager sharedManager] networkRequestOptions]
+                                 completion:completion];
+}
+
++ (void)requestPasswordResetForAuthServer:(NSURL *)serverURL
+                                userEmail:(NSString *)email
+                               completion:(RLMPasswordChangeStatusBlock)completion {
+    [RLMSyncUpdateAccountEndpoint sendRequestToServer:serverURL
+                                                 JSON:@{@"provider_id": email, @"data": @{@"action": @"reset_password"}}
+                                              options:[[RLMSyncManager sharedManager] networkRequestOptions]
+                                           completion:completion];
+}
+
++ (void)completePasswordResetForAuthServer:(NSURL *)serverURL
+                                     token:(NSString *)token
+                                  password:(NSString *)newPassword
+                                completion:(RLMPasswordChangeStatusBlock)completion {
+    [RLMSyncUpdateAccountEndpoint sendRequestToServer:serverURL
+                                                 JSON:@{@"data": @{@"action": @"complete_reset",
+                                                                   @"token": token,
+                                                                   @"new_password": newPassword}}
+                                              options:[[RLMSyncManager sharedManager] networkRequestOptions]
+                                           completion:completion];
+}
+
++ (void)requestEmailConfirmationForAuthServer:(NSURL *)serverURL
+                                    userEmail:(NSString *)email
+                                   completion:(RLMPasswordChangeStatusBlock)completion {
+    [RLMSyncUpdateAccountEndpoint sendRequestToServer:serverURL
+                                                 JSON:@{@"data": @{@"provider_id": email,
+                                                                   @"action": @"request_email_confirmation"}}
+                                              options:[[RLMSyncManager sharedManager] networkRequestOptions]
+                                           completion:completion];
+}
+
++ (void)confirmEmailForAuthServer:(NSURL *)serverURL
+                            token:(NSString *)token
+                       completion:(RLMPasswordChangeStatusBlock)completion {
+    [RLMSyncUpdateAccountEndpoint sendRequestToServer:serverURL
+                                                 JSON:@{@"data": @{@"action": @"confirm_email",
+                                                                   @"token": token}}
+                                              options:[[RLMSyncManager sharedManager] networkRequestOptions]
+                                           completion:completion];
 }
 
 #pragma mark - Administrator API
@@ -322,6 +360,8 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
                                               kRLMSyncProviderIDKey: providerUserIdentity,
                                               kRLMSyncTokenKey: self._refreshToken
                                               }
+                                    timeout:60
+                                    options:[[RLMSyncManager sharedManager] networkRequestOptions]
                                  completion:^(NSError *error, NSDictionary *json) {
                                      if (error) {
                                          completion(nil, error);
@@ -338,7 +378,14 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
 
 #pragma mark - Permissions API
 
+static void verifyInRunLoop() {
+    if (!RLMIsInRunLoop()) {
+        @throw RLMException(@"Can only access or modify permissions from a thread which has a run loop (by default, only the main thread).");
+    }
+}
+
 - (void)retrievePermissionsWithCallback:(RLMPermissionResultsBlock)callback {
+    verifyInRunLoop();
     if (!_user || _user->state() == SyncUser::State::Error) {
         callback(nullptr, make_permission_error_get(@"Permissions cannot be retrieved using an invalid user."));
         return;
@@ -347,6 +394,7 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
 }
 
 - (void)applyPermission:(RLMSyncPermission *)permission callback:(RLMPermissionStatusBlock)callback {
+    verifyInRunLoop();
     if (!_user || _user->state() == SyncUser::State::Error) {
         callback(make_permission_error_change(@"Permissions cannot be applied using an invalid user."));
         return;
@@ -358,6 +406,7 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
 }
 
 - (void)revokePermission:(RLMSyncPermission *)permission callback:(RLMPermissionStatusBlock)callback {
+    verifyInRunLoop();
     if (!_user || _user->state() == SyncUser::State::Error) {
         callback(make_permission_error_change(@"Permissions cannot be revoked using an invalid user."));
         return;
@@ -372,6 +421,7 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
                      accessLevel:(RLMSyncAccessLevel)accessLevel
                       expiration:(NSDate *)expirationDate
                         callback:(RLMPermissionOfferStatusBlock)callback {
+    verifyInRunLoop();
     if (!_user || _user->state() == SyncUser::State::Error) {
         callback(nil, make_permission_error_change(@"A permission offer cannot be created using an invalid user."));
         return;
@@ -396,6 +446,7 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
 
 - (void)acceptOfferForToken:(NSString *)token
                    callback:(RLMPermissionOfferResponseStatusBlock)callback {
+    verifyInRunLoop();
     if (!_user || _user->state() == SyncUser::State::Error) {
         callback(nil, make_permission_error_change(@"A permission offer cannot be accepted by an invalid user."));
         return;
@@ -423,6 +474,20 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
 }
 
 #pragma mark - Private API
+
+- (NSURL *)defaultRealmURL
+{
+    NSURLComponents *components = [NSURLComponents componentsWithURL:self.authenticationServer resolvingAgainstBaseURL:YES];
+    if ([components.scheme caseInsensitiveCompare:@"http"] == NSOrderedSame)
+        components.scheme = @"realm";
+    else if ([components.scheme caseInsensitiveCompare:@"https"] == NSOrderedSame)
+        components.scheme = @"realms";
+    else
+        @throw RLMException(@"The provided user's authentication server URL (%@) was not valid.", self.authenticationServer);
+
+    components.path = @"/default";
+    return components.URL;
+}
 
 + (void)_setUpBindingContextFactory {
     SyncUser::set_binding_context_factory([] {
@@ -508,10 +573,12 @@ PermissionChangeCallback RLMWrapPermissionStatusCallback(RLMPermissionStatusBloc
             });
         }
     };
+
     [RLMNetworkClient sendRequestToEndpoint:[RLMSyncAuthEndpoint endpoint]
                                      server:authServerURL
                                        JSON:json
                                     timeout:timeout
+                                    options:[[RLMSyncManager sharedManager] networkRequestOptions]
                                  completion:^(NSError *error, NSDictionary *dictionary) {
                                      dispatch_async(callbackQueue, ^{
                                          handler(error, dictionary);

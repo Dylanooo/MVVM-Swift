@@ -199,12 +199,6 @@ move_to_clean_dir() {
 }
 
 test_ios_static() {
-    local previous_realm_xcode_version="$REALM_XCODE_VERSION"
-    local previous_realm_swift_version="$REALM_SWIFT_VERSION"
-    if [[ "$IS_RUNNING_PACKAGING" == "1" ]]; then
-        force_xcode_82
-    fi
-
     destination="$1"
     xc "-scheme 'Realm iOS static' -configuration $CONFIGURATION -sdk iphonesimulator -destination '$destination' build"
     if (( $(xcode_version_major) < 9 )); then
@@ -218,21 +212,6 @@ test_ios_static() {
     rm "$path"
 
     xc "-scheme 'Realm iOS static' -configuration $CONFIGURATION -sdk iphonesimulator -destination '$destination' test"
-
-    if [[ "$IS_RUNNING_PACKAGING" == "1" ]]; then
-        # Reset to state before forcing Xcode 8.2
-        REALM_XCODE_VERSION="$previous_realm_xcode_version"
-        REALM_SWIFT_VERSION="$previous_realm_swift_version"
-        set_xcode_and_swift_versions
-        sh build.sh prelaunch-simulator
-    fi
-}
-
-force_xcode_82() {
-  REALM_XCODE_VERSION=8.2
-  REALM_SWIFT_VERSION=
-  set_xcode_and_swift_versions
-  sh build.sh prelaunch-simulator
 }
 
 ######################################
@@ -241,9 +220,21 @@ force_xcode_82() {
 
 test_devices() {
     local serial_numbers=()
-    local serial_numbers_text=$(/usr/sbin/system_profiler SPUSBDataType | /usr/bin/awk '/^ +Serial Number: / { match($0, /^ +Serial Number: /); print substr($0, RLENGTH + 1) }')
+    local awk_script="
+    /^ +Vendor ID: / { is_apple = 0; }
+    /^ +Vendor ID: 0x05[aA][cC] / { is_apple = 1; }
+    /^ +Serial Number: / {
+        if (is_apple) {
+            match(\$0, /^ +Serial Number: /);
+            print substr(\$0, RLENGTH + 1);
+        }
+    }
+    "
+    local serial_numbers_text=$(/usr/sbin/system_profiler SPUSBDataType | /usr/bin/awk "$awk_script")
     while read -r number; do
-        serial_numbers+=("$number")
+        if [[ "$number" != "" ]]; then
+            serial_numbers+=("$number")
+        fi
     done <<< "$serial_numbers_text"
     if [[ ${#serial_numbers[@]} == 0 ]]; then
         echo "At least one iOS/tvOS device must be connected to this computer to run device tests"
@@ -314,8 +305,15 @@ fi
 ######################################
 
 kill_object_server() {
-# Based on build.sh conventions we always run ROS from a path ending in 'ros/bin/ros'.
+    set +e
+    # Based on build.sh conventions we always run ROS from a path ending in 'ros/bin/ros'.
     pkill -f ros/bin/ros\ start
+    # 0 = process killed, 1 = no processes running, 2+ = error
+    local status=$?
+    if [ $status -gt 1 ]; then
+        exit $status
+    fi
+    set -e
 }
 
 download_object_server() {
@@ -982,10 +980,12 @@ case "$COMMAND" in
     ######################################
 
     "binary-has-bitcode")
+        # Disable pipefail as grep -q will make otool fail due to exiting
+        # before reading all the output
+        set +o pipefail
+
         BINARY="$2"
-        # Although grep has a '-q' flag to prevent logging to stdout, grep
-        # behaves differently when used, so redirect stdout to /dev/null.
-        if otool -l "$BINARY" | grep "segname __LLVM" > /dev/null 2>&1; then
+        if otool -l "$BINARY" | grep -q "segname __LLVM"; then
             exit 0
         fi
         # Work around rdar://21826157 by checking for bitcode in thin binaries
@@ -995,6 +995,7 @@ case "$COMMAND" in
 
         archs_array=( $archs )
         if [[ ${#archs_array[@]} -lt 2 ]]; then
+            echo 'Error: Built library is not a fat binary'
             exit 1 # Early exit if not a fat binary
         fi
 
@@ -1006,6 +1007,7 @@ case "$COMMAND" in
                 exit 0
             fi
         done
+        echo 'Error: Built library does not contain bitcode'
         exit 1
         ;;
 
@@ -1192,57 +1194,12 @@ EOM
         zip --symlinks -r realm-framework-osx.zip Realm.framework
         ;;
 
-    "package-ios-swift")
-        for version in 8.0 8.1 8.2 8.3.3 9.0 9.1; do
-            REALM_XCODE_VERSION=$version
-            REALM_SWIFT_VERSION=
-            set_xcode_and_swift_versions
-            sh build.sh prelaunch-simulator
-            sh build.sh ios-swift
-        done
-
-        cd build/ios
-        ln -s swift-4.0 swift-3.2
-        ln -s swift-4.0.2 swift-3.2.2
-        zip --symlinks -r realm-swift-framework-ios.zip swift-3.0 swift-3.0.1 swift-3.0.2 swift-3.1 swift-3.2 swift-3.2.2 swift-4.0 swift-4.0.2
-        ;;
-
-    "package-osx-swift")
-        for version in 8.0 8.1 8.2 8.3.3 9.0 9.1; do
-            REALM_XCODE_VERSION=$version
-            REALM_SWIFT_VERSION=
-            set_xcode_and_swift_versions
-            sh build.sh prelaunch-simulator
-            sh build.sh osx-swift
-        done
-
-        cd build/osx
-        ln -s swift-4.0 swift-3.2
-        ln -s swift-4.0.2 swift-3.2.2
-        zip --symlinks -r realm-swift-framework-osx.zip swift-3.0 swift-3.0.1 swift-3.0.2 swift-3.1 swift-3.2 swift-3.2.2 swift-4.0 swift-4.0.2
-        ;;
-
     "package-watchos")
         sh build.sh prelaunch-simulator
         sh build.sh watchos
 
         cd build/watchos
         zip --symlinks -r realm-framework-watchos.zip Realm.framework
-        ;;
-
-    "package-watchos-swift")
-        for version in 8.0 8.1 8.2 8.3.3 9.0 9.1; do
-            REALM_XCODE_VERSION=$version
-            REALM_SWIFT_VERSION=
-            set_xcode_and_swift_versions
-            sh build.sh prelaunch-simulator
-            sh build.sh watchos-swift
-        done
-
-        cd build/watchos
-        ln -s swift-4.0 swift-3.2
-        ln -s swift-4.0.2 swift-3.2.2
-        zip --symlinks -r realm-swift-framework-watchos.zip swift-3.0 swift-3.0.1 swift-3.0.2 swift-3.1 swift-3.2 swift-3.2.2 swift-4.0 swift-4.0.2
         ;;
 
     "package-tvos")
@@ -1253,19 +1210,23 @@ EOM
         zip --symlinks -r realm-framework-tvos.zip Realm.framework
         ;;
 
-    "package-tvos-swift")
-        for version in 8.0 8.1 8.2 8.3.3 9.0 9.1; do
+    package-*-swift)
+        PLATFORM=$(echo $COMMAND | cut -d - -f 2)
+        for version in 8.3.3 9.0 9.1 9.2 9.3; do
             REALM_XCODE_VERSION=$version
             REALM_SWIFT_VERSION=
             set_xcode_and_swift_versions
             sh build.sh prelaunch-simulator
-            sh build.sh tvos-swift
+            sh build.sh $PLATFORM-swift
         done
 
-        cd build/tvos
+        cd build/$PLATFORM
         ln -s swift-4.0 swift-3.2
         ln -s swift-4.0.2 swift-3.2.2
-        zip --symlinks -r realm-swift-framework-tvos.zip swift-3.0 swift-3.0.1 swift-3.0.2 swift-3.1 swift-3.2 swift-3.2.2 swift-4.0 swift-4.0.2
+        ln -s swift-4.0.2 swift-3.2.3
+        ln -s swift-4.0.2 swift-4.0.3
+        ln -s swift-4.1 swift-3.3
+        zip --symlinks -r realm-swift-framework-$PLATFORM.zip swift-3.1 swift-3.2 swift-3.2.2 swift-3.2.3 swift-3.3 swift-4.0 swift-4.0.2 swift-4.0.3 swift-4.1
         ;;
 
     package-*-swift-3.2)
@@ -1282,6 +1243,30 @@ EOM
         cd build/$PLATFORM
         ln -s swift-4.0.2 swift-3.2.2
         zip --symlinks -r realm-swift-framework-$PLATFORM-swift-3.2.2.zip swift-3.2.2
+        ;;
+
+    package-*-swift-3.2.3)
+        PLATFORM=$(echo $COMMAND | cut -d - -f 2)
+        mkdir -p build/$PLATFORM
+        cd build/$PLATFORM
+        ln -s swift-4.0.2 swift-3.2.3
+        zip --symlinks -r realm-swift-framework-$PLATFORM-swift-3.2.3.zip swift-3.2.3
+        ;;
+
+    package-*-swift-3.3)
+        PLATFORM=$(echo $COMMAND | cut -d - -f 2)
+        mkdir -p build/$PLATFORM
+        cd build/$PLATFORM
+        ln -s swift-4.1 swift-3.3
+        zip --symlinks -r realm-swift-framework-$PLATFORM-swift-3.3.zip swift-3.3
+        ;;
+
+    package-*-swift-4.0.3)
+        PLATFORM=$(echo $COMMAND | cut -d - -f 2)
+        mkdir -p build/$PLATFORM
+        cd build/$PLATFORM
+        ln -s swift-4.0.2 swift-4.0.3
+        zip --symlinks -r realm-swift-framework-$PLATFORM-swift-4.0.3.zip swift-4.0.3
         ;;
 
     package-*-swift-*)

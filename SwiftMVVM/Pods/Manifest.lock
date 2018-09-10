@@ -1,38 +1,50 @@
 PODS:
-  - Alamofire (4.4.0)
-  - Kingfisher (4.5.0)
+  - Alamofire (4.7.2)
+  - Kingfisher (4.8.0)
   - MBProgressHUD (1.0.0)
-  - Realm (3.0.2):
-    - Realm/Headers (= 3.0.2)
-  - Realm/Headers (3.0.2)
-  - RealmSwift (3.0.2):
-    - Realm (= 3.0.2)
+  - Realm (3.6.0):
+    - Realm/Headers (= 3.6.0)
+  - Realm/Headers (3.6.0)
+  - RealmSwift (3.6.0):
+    - Realm (= 3.6.0)
   - SnapKit (4.0.0)
-  - SwiftyBeaver (1.5.0)
-  - SwiftyJSON (3.1.4)
+  - SwiftyBeaver (1.6.0)
+  - SwiftyJSON (4.1.0)
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4.0)
+  - Alamofire (~> 4.7)
   - Kingfisher
   - MBProgressHUD (~> 1.0.0)
-  - RealmSwift (~> 3.0.2)
+  - RealmSwift (~> 3.6.0)
   - SnapKit (~> 4.0.0)
   - SwiftyBeaver
-  - SwiftyJSON (~> 3.1.4)
+  - SwiftyJSON (~> 4.1.0)
   - YYText
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
+    - MBProgressHUD
+    - Realm
+    - RealmSwift
+    - SnapKit
+    - SwiftyBeaver
+    - SwiftyJSON
+    - YYText
+
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
-  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
+  RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftyBeaver: 384235c59d9c67b4a5e1810cffa713babba34efd
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 430d637f3bc4674246c580d1eec7cc8b5a7f7563
+PODFILE CHECKSUM: 1aa2e88ca87e8fc8df50b8a96aae399b3a12ed3b
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

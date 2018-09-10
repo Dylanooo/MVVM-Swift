@@ -215,4 +215,6 @@ enum NotificationName: String {
 
 ```
 
+**PS:项目中所用服务端接口为本地服务,实现方式为Python+Flask+MongoDB，如有需要，请部署项目[MVVM-Service](https://github.com/Dylanooo/MVVM-Service)**
+
 
